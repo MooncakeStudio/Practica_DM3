@@ -16,7 +16,7 @@ public class Personaje
     
     // CONSTRUCTOR
 
-    protected Personaje(string nombre = "",  int vida = 100, int ataque = 10, int defensa = 5)
+    public Personaje(string nombre = "",  int vida = 100, int ataque = 10, int defensa = 5)
     {
         this.nombre = nombre;
 
