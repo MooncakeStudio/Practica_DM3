@@ -1,0 +1,416 @@
+fileFormatVersion: 2
+guid: 3781ab48777d1c046a1bbc39b8984ccb
+ModelImporter:
+  serializedVersion: 21300
+  internalIDToNameTable:
+  - first:
+      74: 1827226128182048838
+    second: Andar
+  - first:
+      74: 4713615333660393378
+    second: Ataque espada
+  - first:
+      74: -3380430859188679659
+    second: Ataque especial espada
+  - first:
+      74: 2017928639559865908
+    second: Ataque mago
+  - first:
+      74: 245392679792549120
+    second: Ataque especial mago
+  - first:
+      74: -3100369314251171874
+    second: Idle
+  - first:
+      74: -998496362607748373
+    second: Parado
+  externalObjects: {}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 1
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Andar
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 2
+      lastFrame: 27
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Ataque espada
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 30
+      lastFrame: 71
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Ataque especial espada
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 71
+      lastFrame: 95
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Ataque mago
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 96
+      lastFrame: 120
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Ataque especial mago
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 121
+      lastFrame: 150
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Idle
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 151
+      lastFrame: 250
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton:
+    - name: Personaje(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cuerpo
+      parentName: Personaje(Clone)
+      position: {x: -7.5139e-33, y: 0.72914594, z: -0.15477757}
+      rotation: {x: -0.7064338, y: -0.030843567, z: -0.030843567, w: 0.7064338}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Brujo
+      parentName: Cuerpo
+      position: {x: -0.0008982252, y: 0.017342424, z: 0.8787469}
+      rotation: {x: 1, y: 0, z: 0, w: -0.00000013315805}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Capa001
+      parentName: Cuerpo
+      position: {x: -0, y: 0, z: 0.031544585}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1.042553, y: 1.160339, z: 1.00376}
+    - name: Ojos
+      parentName: Cuerpo
+      position: {x: 0.14039989, y: -0.22672758, z: 0.76381755}
+      rotation: {x: 0.70710695, y: 0, z: 0, w: 0.70710665}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Casco001
+      parentName: Cuerpo
+      position: {x: -0, y: 0.000000024223327, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: espada003
+      parentName: Cuerpo
+      position: {x: 0.5880098, y: -0.10288326, z: 0.058339316}
+      rotation: {x: 0.025019007, y: -0.8183727, z: 0.03573095, w: 0.5730302}
+      scale: {x: 1, y: 1, z: 0.999999}
+    - name: "Bast\xF3n001"
+      parentName: Cuerpo
+      position: {x: 0.5837173, y: 0.44965628, z: -0.009343228}
+      rotation: {x: 0.64278764, y: 0, z: -0, w: 0.76604444}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Sphere002
+      parentName: "Bast\xF3n001"
+      position: {x: -0.0014177429, y: -0.0008156479, z: 1.7522588}
+      rotation: {x: 1, y: -4.656613e-10, z: 2.3939184e-16, w: -0.00000051409006}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cone002
+      parentName: "Bast\xF3n001"
+      position: {x: -0.0014995208, y: 0.000022866821, z: 1.9070448}
+      rotation: {x: -0.000000007450581, y: 3.469447e-18, z: -4.656613e-10, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base HumanPelvis
+      parentName: Personaje(Clone)
+      position: {x: 0.00000004304377, y: 0.35993674, z: -0.24447402}
+      rotation: {x: 0.49912265, y: -0.50086725, z: -0.4991312, w: 0.5008759}
+      scale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
+    - name: Base HumanRThigh
+      parentName: Base HumanPelvis
+      position: {x: -0.01548016, y: 0.04220848, z: -0.22223301}
+      rotation: {x: 0.0024346933, y: 0.99994993, z: 0.0013399001, w: -0.009615698}
+      scale: {x: 1.0000005, y: 0.99999994, z: 1.0000002}
+    - name: Base HumanLThigh
+      parentName: Base HumanPelvis
+      position: {x: -0.01548016, y: 0.042208493, z: 0.22223292}
+      rotation: {x: 0.0026020845, y: 0.99994916, z: -0.0013385458, w: 0.00965383}
+      scale: {x: 1.0000005, y: 0.9999999, z: 1.0000001}
+    - name: Base HumanSpine
+      parentName: Base HumanPelvis
+      position: {x: -0.041093517, y: -0.0031440668, z: -0.000000007802649}
+      rotation: {x: 0.0000000059212693, y: -0.0000000299838, z: -0.0060395454, w: 0.99998176}
+      scale: {x: 1.0000004, y: 1.0000006, z: 1.0000001}
+    - name: Base HumanRibcage
+      parentName: Base HumanSpine
+      position: {x: -0.7213035, y: 0, z: -3.6961864e-13}
+      rotation: {x: -0.000000008448727, y: 0.00000085901087, z: -0.42715803, w: 0.90417695}
+      scale: {x: 0.9999998, y: 0.9999998, z: 0.9999999}
+    - name: Base HumanNeck
+      parentName: Base HumanRibcage
+      position: {x: -0.0007140068, y: -0.003144091, z: -0.0000000060377205}
+      rotation: {x: -0.000000021919158, y: -0.00000041726526, z: 0.20466836, w: 0.9788314}
+      scale: {x: 0.9999999, y: 1, z: 0.9999999}
+    - name: Base HumanHead
+      parentName: Base HumanNeck
+      position: {x: -0.18529664, y: 0, z: 0}
+      rotation: {x: -4.5732122e-14, y: -7.1054274e-15, z: 2.842171e-14, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Base HumanRCollarbone
+      parentName: Base HumanRibcage
+      position: {x: 0.015606799, y: 0.09126205, z: -0.24604593}
+      rotation: {x: -0.06358778, y: -0.6842714, z: 0.16581899, w: 0.70727175}
+      scale: {x: 1.0000002, y: 1.0000001, z: 0.99999976}
+    - name: Base HumanRUpperarm
+      parentName: Base HumanRCollarbone
+      position: {x: -0.11857464, y: 0.000000012111664, z: 0.00000009689331}
+      rotation: {x: -0.3131724, y: 0.005207569, z: -0.1695713, w: 0.93442047}
+      scale: {x: 1.0000001, y: 0.9999998, z: 0.9999997}
+    - name: Base HumanRForearm
+      parentName: Base HumanRUpperarm
+      position: {x: -0.22711655, y: 0, z: 0}
+      rotation: {x: 0.4312436, y: -0.1336178, z: 0.0033077174, w: 0.8922804}
+      scale: {x: 0.99999976, y: 0.9999991, z: 1.000001}
+    - name: Base HumanLCollarbone
+      parentName: Base HumanRibcage
+      position: {x: 0.015606896, y: 0.09126205, z: 0.24604602}
+      rotation: {x: 0.06358856, y: 0.6842709, z: 0.16581984, w: 0.707272}
+      scale: {x: 0.9999995, y: 1, z: 1.0000002}
+    - name: Base HumanLUpperarm
+      parentName: Base HumanLCollarbone
+      position: {x: -0.118574664, y: 0.000000012111664, z: 0}
+      rotation: {x: 0.3131718, y: -0.00520888, z: -0.1695713, w: 0.93442065}
+      scale: {x: 0.9999997, y: 1.0000008, z: 0.9999995}
+    - name: Base HumanLForearm
+      parentName: Base HumanLUpperarm
+      position: {x: -0.22711651, y: 0, z: 0}
+      rotation: {x: -0.43124375, y: 0.13361777, z: 0.0033077989, w: 0.89228034}
+      scale: {x: 1.0000001, y: 1.0000017, z: 0.99999845}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
