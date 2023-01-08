@@ -10,9 +10,9 @@ public class ChronometerHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-            GameManager.tiempo += Time.deltaTime;
+            GameManager.instance.AvanzaTiempo();
 
-            muestraTiempo(GameManager.tiempo);
+            muestraTiempo(GameManager.instance.GetTiempo());
     }
 
     void muestraTiempo(float tiempoAMostrar)

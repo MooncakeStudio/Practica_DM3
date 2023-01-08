@@ -7,22 +7,60 @@ public class GameManager : MonoBehaviour
 {
     // ATRIBUTOS
 
-    public static float tiempo;
-    public static int ronda;
+    private float tiempo;
+    
 
+    [Header("Texto puntuaciones")]
     [SerializeField] TextMeshProUGUI mostrarPuntuaciones;
+
+    public static GameManager instance;
+
+    private int enemigosGenerar;
+    private int enemigosGenerados;
+    [Header("Pruebas")]
+    [SerializeField]private int enemigosDerrotados;
+    [SerializeField] private int ronda;
+
+    private bool nuevaRonda = true;
 
     // METODOS
 
     public void Awake()
     {
+        if (FindObjectsOfType(GetType()).Length > 1)
+        {
+            Destroy(gameObject);
+        }
+
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        else
+        {
+            instance = this;
+        }
+
+        DontDestroyOnLoad(gameObject);
+
         tiempo = 0;
         ronda = 0;
+        enemigosGenerar = 5;
+    }
+
+    private void Update()
+    {
+        if(enemigosDerrotados == enemigosGenerar)
+        {
+            nuevaRonda = true;
+            PasarRonda();
+        }
     }
 
     public void MostrarPuntuaciones()
     {
-        if (!mostrarPuntuaciones.gameObject.active)
+        if (!mostrarPuntuaciones.gameObject.activeSelf)
         {
 
             mostrarPuntuaciones.gameObject.SetActive(true);
@@ -48,4 +86,17 @@ public class GameManager : MonoBehaviour
 
         mostrarPuntuaciones.gameObject.SetActive(false);
     }
+
+    public void PasarRonda() { ronda++; enemigosGenerar = enemigosGenerar + (int)Random.Range(1, 4); enemigosDerrotados = 0; enemigosGenerados = 0; }
+    public void NuevoEnemgio() { enemigosGenerados++; }
+    public void EnemigoDerrotado() { enemigosDerrotados++; }
+    public int GetEnemigosGenerados() { return enemigosGenerados; }
+    public int GetEnemigosGenerar() { return enemigosGenerar; }
+
+    public int GetRonda() { return ronda; }
+    public float GetTiempo() { return tiempo; }
+
+    public bool DeberiaGenerarEnemgios() { return nuevaRonda; }
+    public void EmpezadaRonda() { nuevaRonda = false; }
+    public void AvanzaTiempo() { tiempo += Time.deltaTime; }
 }

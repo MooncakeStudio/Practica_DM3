@@ -35,8 +35,8 @@ public class DataHandler : MonoBehaviour
     public void Guardar()
     {
         SerializableScore sc = new SerializableScore();
-        sc.tiempo = GameManager.tiempo;
-        sc.ronda = GameManager.ronda;
+        sc.tiempo = GameManager.instance.GetTiempo();
+        sc.ronda = GameManager.instance.GetRonda();
 
         scl.list.Add(sc);
 
