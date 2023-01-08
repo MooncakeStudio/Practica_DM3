@@ -5,15 +5,14 @@ using UnityEngine;
 
 public class ChronometerHandler : MonoBehaviour
 {
-    public float tiempo = 0;
     public TextMeshProUGUI textoTiempo;
 
     // Update is called once per frame
     void Update()
     {
-            tiempo += Time.deltaTime;
+            GameManager.tiempo += Time.deltaTime;
 
-            muestraTiempo(tiempo);
+            muestraTiempo(GameManager.tiempo);
     }
 
     void muestraTiempo(float tiempoAMostrar)
