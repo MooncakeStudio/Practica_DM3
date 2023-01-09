@@ -37,8 +37,8 @@ public class SpawnerManager : MonoBehaviour
     {
         Vector3 posicion = Vector3.zero;
 
-        //fórmula circunferencia conociendo centro y radio
-        // (x -xc)^2 + (y+yc)^2 = r^2, siendo xc e yc los puntos del centro. El centro está en (0,0) y el radio es 105.
+        //fï¿½rmula circunferencia conociendo centro y radio
+        // (x -xc)^2 + (y+yc)^2 = r^2, siendo xc e yc los puntos del centro. El centro estï¿½ en (0,0) y el radio es 105.
         int xPos = Random.Range(-106, 0);
         
         //xPos = (int)Mathf.Pow(xPos, factoNegativo);
@@ -51,7 +51,7 @@ public class SpawnerManager : MonoBehaviour
         if (factoNegativo == 1)
             posZ = -posZ;
 
-        posicion = new Vector3(xPos, transform.position.y, posZ);
+        posicion = new Vector3(xPos, 20f, posZ);
         return posicion;
     }
 }

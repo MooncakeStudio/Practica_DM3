@@ -14,6 +14,11 @@ public class MagoController : PersonajeController
        
     }
 
+    public void TakeDamage(int d)
+    {
+        personaje.herida(d);
+    }
+
     private void Start()
     {
         GetComponent<InputHandler>().changeCallback();

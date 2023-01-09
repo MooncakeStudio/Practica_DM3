@@ -18,6 +18,10 @@ public class PersonajeController : MonoBehaviour
         }*/
     }
 
+    public void TakeDamage(int d)
+    {
+        personaje.herida(d);
+    }
     public void Atacar()
     {
         this.personaje.RealizarAtaque();
