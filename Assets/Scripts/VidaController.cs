@@ -16,14 +16,24 @@ public class VidaController : MonoBehaviour
     }
 
     void Update()
-    {        
-        vida = Mathf.Clamp (vida, 0 ,vidaMax);
-        bVida.fillAmount = vida / vidaMax;
-        vidaNumero.text = (string)(""+ (int)vida);
+    {
+        if(bVida != null && vidaNumero != null) 
+        {
+            vida = Mathf.Clamp(vida, 0, vidaMax);
+            bVida.fillAmount = vida / vidaMax;
+            vidaNumero.text = (string)("" + (int)vida);
+        }
+        
     }
 
     public void actualizarVida(int vidaNueva){
         vida = vidaNueva;
         vida = Mathf.Clamp (vida, 0 ,vidaMax);
+    }
+
+    public void Componentes(TextMeshProUGUI vidaNumero, Image bVida)
+    {
+        this.vidaNumero = vidaNumero;
+        this.bVida = bVida;
     }
 }
