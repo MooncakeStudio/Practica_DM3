@@ -1,14 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Animations;
 using UnityEngine;
 
 public class PersonajeController : MonoBehaviour
 {
-    Personaje personaje;
-
+    protected Personaje personaje;
     public void Awake()
     {
-        this.personaje = new Guerrero();    
+        personaje = new Arquero();
+        /*if (personaje.GetType().Equals(typeof(Guerrero)))
+        {
+            animator.runtimeAnimatorController = listaAnimators[0];
+        }else if (personaje.GetType().Equals(typeof(Mago)))
+        {
+            animator.runtimeAnimatorController = listaAnimators[1];
+        }*/
     }
 
     public void Atacar()
@@ -23,5 +30,10 @@ public class PersonajeController : MonoBehaviour
 
     public int VidaTotal(){
         return this.personaje.GetVida();
+    }
+
+    public void SetPersonaje(Personaje personaje)
+    {
+        this.personaje = personaje;
     }
 }

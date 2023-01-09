@@ -5,6 +5,7 @@ using UnityEngine;
 using System;
 using System.IO;
 using System.Runtime.Serialization.Json;
+using System.Linq;
 
 public class DataHandler : MonoBehaviour
 {
@@ -25,6 +26,7 @@ public class DataHandler : MonoBehaviour
         {
             string json = File.ReadAllText(path + "/Puntuaciones.json");
             scl = JsonUtility.FromJson<SerializableScoreList>(json);
+            //scl.list = scl.list.OrderByDescending(x => x.tiempo).ToList();
         } else
         {
             scl = new SerializableScoreList();
@@ -39,6 +41,8 @@ public class DataHandler : MonoBehaviour
         sc.ronda = GameManager.instance.GetRonda();
 
         scl.list.Add(sc);
+
+        scl.list = scl.list.OrderByDescending(x => x.ronda).ThenByDescending(x => x.tiempo).ToList();
 
         String puntuacionesJson = JsonUtility.ToJson(scl);
 

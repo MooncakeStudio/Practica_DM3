@@ -13,10 +13,11 @@ public class IconoManager : MonoBehaviour
     {
         var imagen = GetComponent<Image>();
 
-        if(GameManager.eleccionPersonaje == Clase.LADRON)
+        if (GameManager.eleccionPersonaje == Clase.LADRON)
         {
             imagen.sprite = ladron;
-        } else if (GameManager.eleccionPersonaje == Clase.MAGO)
+        }
+        else if (GameManager.eleccionPersonaje == Clase.MAGO)
         {
             imagen.sprite = mago;
         } else

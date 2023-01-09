@@ -3,17 +3,19 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemigo
+  - EspecialMago
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Obstaculo
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Escenario
+  - Enemigos
+  - Personajes
   - 
   - 
   - 
