@@ -18,11 +18,6 @@ public class MagoController : PersonajeController
        
     }
 
-    public void TakeDamage(int d)
-    {
-        personaje.herida(d);
-    }
-
     private void Start()
     {
         GetComponent<InputHandler>().changeCallback();
@@ -43,6 +38,7 @@ public class MagoController : PersonajeController
         fuego.Play();
         humo.Play();
         GetComponent<Animator>().SetTrigger("Especial");
+        
     }
 
     public int GetAtaque() { return personaje.GetAtaque(); }
