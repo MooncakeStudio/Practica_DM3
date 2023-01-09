@@ -11,10 +11,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MenuPPal.unity
     guid: d6b6b68a6703a5147beb30d58210b3c8
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Scenes/SelecPersonajes.unity
     guid: 0ec544092db0576409c36716311db5f4
+  - enabled: 1
+    path: Assets/Scenes/Escenario.unity
+    guid: 0c989c303e1a51b49941b45427344d13
   m_configObjects: {}
