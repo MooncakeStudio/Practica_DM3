@@ -24,6 +24,14 @@ public class SpawnPersonaje : MonoBehaviour
     [SerializeField] private TextMeshProUGUI textoVida;
     [SerializeField] private Image vida;
 
+
+    [SerializeField] private AudioClip batallaClip;
+
+    private void Awake()
+    {
+        GameManager.instance.setClip(batallaClip);
+    }
+
     // Start is called before the first frame update
     void Start()
     {

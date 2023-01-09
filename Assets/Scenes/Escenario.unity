@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.574817, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1068,6 +1068,7 @@ MonoBehaviour:
   cameraVirtual: {fileID: 862506966}
   textoVida: {fileID: 649541525}
   vida: {fileID: 915476153}
+  batallaClip: {fileID: 8300000, guid: 02bf5f01d31e7164ba9884d29f3682fd, type: 3}
 --- !u!4 &568595782
 Transform:
   m_ObjectHideFlags: 0
