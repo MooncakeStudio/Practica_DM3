@@ -8,20 +8,21 @@ public class GameManager : MonoBehaviour
     // ATRIBUTOS
 
     private float tiempo;
-    
+    public static Clase eleccionPersonaje;
+    public static GameManager instance;
 
     [Header("Texto puntuaciones")]
     [SerializeField] TextMeshProUGUI mostrarPuntuaciones;
 
-    public static GameManager instance;
-
     private int enemigosGenerar;
     private int enemigosGenerados;
+
     [Header("Pruebas")]
-    [SerializeField]private int enemigosDerrotados;
+    [SerializeField] private int enemigosDerrotados;
     [SerializeField] private int ronda;
 
     private bool nuevaRonda = true;
+
 
     // METODOS
 
@@ -99,4 +100,13 @@ public class GameManager : MonoBehaviour
     public bool DeberiaGenerarEnemgios() { return nuevaRonda; }
     public void EmpezadaRonda() { nuevaRonda = false; }
     public void AvanzaTiempo() { tiempo += Time.deltaTime; }
+
+    public Clase GetEleccionPersonaje() { return eleccionPersonaje; }
+    public void SetEleccionPersonaje(Clase nuevaEleccion) { eleccionPersonaje = nuevaEleccion; }
+}
+
+
+public enum Clase
+{
+    LADRON, MAGO, GUERRERO
 }
