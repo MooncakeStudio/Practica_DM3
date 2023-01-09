@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EleccionPersonaje : MonoBehaviour
 {
+    public AudioSource src;
     public void CambiarEleccion(int eleccion)
     {
         switch (eleccion)
