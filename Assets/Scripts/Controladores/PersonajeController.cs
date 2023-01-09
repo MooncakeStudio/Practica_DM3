@@ -20,4 +20,8 @@ public class PersonajeController : MonoBehaviour
     {
         this.personaje.RealizarAtaqueEspecial();
     }
+
+    public int VidaTotal(){
+        return this.personaje.GetVida();
+    }
 }
