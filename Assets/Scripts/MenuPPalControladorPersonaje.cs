@@ -12,6 +12,12 @@ public class MenuPPalControladorPersonaje : MonoBehaviour
     [SerializeField] GameObject mago;
     [SerializeField] GameObject guerrero;
     // Start is called before the first frame update
+
+
+    [SerializeField] private AudioClip menuClip;
+
+ 
+
     void Start()
     {
         ladron.transform.position = vectorReset;
@@ -28,6 +34,8 @@ public class MenuPPalControladorPersonaje : MonoBehaviour
         {
             guerrero.transform.position = vectorPos;
         }
+        GameManager.instance.setClip(menuClip);
+
     }
 
     // Update is called once per frame

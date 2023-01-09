@@ -74,7 +74,11 @@ public class EnemigoController : MonoBehaviour
         if (other.CompareTag("EspecialMago"))
         {
             Debug.Log("Me atacan");
-            personaje.herida(other.gameObject.GetComponentInParent<MagoController>().GetAtaque());
+            personaje.herida(other.gameObject.GetComponentInParent<MagoController>().GetAtaque()*3/5);
+        }else if (other.CompareTag("BasicoMago"))
+        {
+            Debug.Log("Me atacan");
+            personaje.herida(other.gameObject.GetComponentInParent<AtaqueBasicoMagoDatos>().ataque);
         }
 
         if (other.CompareTag("PersonajeObjetivo"))
