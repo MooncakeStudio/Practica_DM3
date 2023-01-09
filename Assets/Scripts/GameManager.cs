@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
 
 
     // METODOS
-
+    private AudioSource audioSource;
     public void Awake()
     {
         if (FindObjectsOfType(GetType()).Length > 1)
@@ -48,6 +48,9 @@ public class GameManager : MonoBehaviour
         tiempo = 0;
         ronda = 0;
         enemigosGenerar = 5;
+
+        audioSource = GetComponent<AudioSource>();
+        audioSource.volume = 1;
     }
 
     private void Update()
@@ -103,6 +106,13 @@ public class GameManager : MonoBehaviour
 
     public Clase GetEleccionPersonaje() { return eleccionPersonaje; }
     public void SetEleccionPersonaje(Clase nuevaEleccion) { eleccionPersonaje = nuevaEleccion; }
+
+    public IEnumerator playOnce(AudioClip clip)
+    {
+        audioSource.PlayOneShot(clip);
+        yield return new WaitForSeconds(clip.length);
+    }
+
 }
 
 
