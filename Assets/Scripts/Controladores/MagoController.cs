@@ -38,6 +38,7 @@ public class MagoController : PersonajeController
         fuego.Play();
         humo.Play();
         GetComponent<Animator>().SetTrigger("Especial");
+        
     }
 
     public int GetAtaque() { return personaje.GetAtaque(); }

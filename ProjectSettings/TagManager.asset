@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemigo
   - EspecialMago
+  - PersonajeObjetivo
   - BasicoMago
   layers:
   - Default
@@ -15,8 +16,8 @@ TagManager:
   - Water
   - UI
   - Escenario
-  - Enemigos
-  - Personajes
+  - 
+  - 
   - 
   - 
   - 

@@ -53,6 +53,17 @@ public class EnemigoController : MonoBehaviour
         return personaje.GetVida();
     }
 
+    public int Getataque()
+    {
+        return personaje.GetAtaque();
+    }
+
+    public void Atacar()
+    {
+        this.personaje.RealizarAtaque();
+        transform.Find("Personaje").GetComponent<Animator>().SetTrigger("Atacar");
+    }
+
     private void OnDestroy()
     {
         GameManager.instance.EnemigoDerrotado();
@@ -69,5 +80,20 @@ public class EnemigoController : MonoBehaviour
             Debug.Log("Me atacan");
             personaje.herida(other.gameObject.GetComponentInParent<AtaqueBasicoMagoDatos>().ataque);
         }
+
+        if (other.CompareTag("PersonajeObjetivo"))
+        {
+            Debug.Log("ataco");
+            Atacar();
+            if(GameManager.eleccionPersonaje==Clase.LADRON){
+                other.gameObject.GetComponentInParent<PersonajeController>().TakeDamage(this.Getataque());
+            } else if(GameManager.eleccionPersonaje==Clase.MAGO){
+                other.gameObject.GetComponentInParent<MagoController>().TakeDamage(this.Getataque());
+            }else{
+                other.gameObject.GetComponentInParent<PersonajeController>().TakeDamage(this.Getataque());
+            }
+        }
+
+
     }
 }
