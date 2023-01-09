@@ -10,9 +10,10 @@ public class GameManager : MonoBehaviour
     private float tiempo;
     public static Clase eleccionPersonaje;
     public static GameManager instance;
+    
 
-    [Header("Texto puntuaciones")]
-    [SerializeField] TextMeshProUGUI mostrarPuntuaciones;
+    /*[Header("Texto puntuaciones")]
+    [SerializeField] TextMeshProUGUI mostrarPuntuaciones;*/
 
     private int enemigosGenerar;
     private int enemigosGenerados;
@@ -48,6 +49,7 @@ public class GameManager : MonoBehaviour
         tiempo = 0;
         ronda = 0;
         enemigosGenerar = 5;
+        eleccionPersonaje = 0;
     }
 
     private void Update()
@@ -59,7 +61,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void MostrarPuntuaciones()
+    /*public void MostrarPuntuaciones()
     {
         if (!mostrarPuntuaciones.gameObject.activeSelf)
         {
@@ -78,15 +80,15 @@ public class GameManager : MonoBehaviour
                 texto.text += sc.ronda + "\t \t \t" + string.Format("{0:0}:{1:00}", minutos, segundos) + "\n";
             }
         }
-    }
+    }*/
 
-    public void CerrarPuntuaciones()
+    /*public void CerrarPuntuaciones()
     {
         var texto = mostrarPuntuaciones.GetComponent<TextMeshProUGUI>();
         texto.text = "";
 
         mostrarPuntuaciones.gameObject.SetActive(false);
-    }
+    }*/
 
     public void PasarRonda() { ronda++; enemigosGenerar = enemigosGenerar + (int)Random.Range(1, 4); enemigosDerrotados = 0; enemigosGenerados = 0; }
     public void NuevoEnemgio() { enemigosGenerados++; }

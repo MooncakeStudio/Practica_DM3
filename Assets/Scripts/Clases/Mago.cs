@@ -14,9 +14,11 @@ public class Mago : Personaje
     override public void RealizarAtaque() 
     {
         Debug.Log("Mago: He realizado un ataque");
+
     }
     public override void RealizarAtaqueEspecial() 
     {
         Debug.Log("Mago: He realizado un ataque especial");
+        
     }
 }

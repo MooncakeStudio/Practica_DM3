@@ -33,6 +33,8 @@ public class Personaje
     public int GetAtaque() { return this.ataque; }
     public int GetDefensa() { return this.defensa; }
 
+    public void herida(int d) { vida -= d; }
+
 
     // METODOS
 

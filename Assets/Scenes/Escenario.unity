@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -206,19 +206,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 205119669}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1012465138}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: CerrarPuntuaciones
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &205119669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -508,7 +496,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!54 &407211428
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -889,19 +877,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 448311743}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1012465138}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: MostrarPuntuaciones
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &448311743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1804,7 +1780,7 @@ MonoBehaviour:
   m_Priority: 10
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 407211433}
+  m_Follow: {fileID: 0}
   m_Lens:
     FieldOfView: 40
     OrthographicSize: 34.26
@@ -1831,7 +1807,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 862506965}
   m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: 5.06, y: 50.76534, z: -5.3453383}
+  m_LocalPosition: {x: 5.0132, y: 49.82534, z: -5.4233403}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2284,7 +2260,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: 5.06, y: 50.76534, z: -5.3453383}
+  m_LocalPosition: {x: 5.0132, y: 49.82534, z: -5.4233403}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2335,7 +2311,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1012465139}
-  - component: {fileID: 1012465138}
   - component: {fileID: 1012465137}
   m_Layer: 0
   m_Name: GameManager
@@ -2356,21 +2331,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ce9dd2c63c85c94ea39f2933558fb68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1012465138
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1012465136}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5016dc78a866d246ac043440c32f0ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mostrarPuntuaciones: {fileID: 584110528}
-  enemigosDerrotados: 0
-  ronda: 0
 --- !u!4 &1012465139
 Transform:
   m_ObjectHideFlags: 0
@@ -2517,19 +2477,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1151676797}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 407211434}
-        m_TargetAssemblyTypeName: PersonajeController, Assembly-CSharp
-        m_MethodName: Atacar
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1151676797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2568,6 +2516,60 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1151676794}
   m_CullTransparentMesh: 1
+--- !u!1 &1230697273
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1230697274}
+  - component: {fileID: 1230697275}
+  m_Layer: 0
+  m_Name: SpawnPersonaje
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1230697274
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1230697273}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.0132, y: 14.46, z: 29.932}
+  m_LocalScale: {x: 1.0361214, y: 1.0361214, z: 1.0361214}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1230697275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1230697273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e02b17e958f818c4a9e5764cd56d0619, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabs:
+  - {fileID: 7057763601906586836, guid: b530bcce90b4e114aa547d8579835281, type: 3}
+  - {fileID: 7057763601906586836, guid: e7939942fbd4b5a4686f2ec28f198dac, type: 3}
+  - {fileID: 7057763601906586836, guid: 89baa216b3a520b4f99e71e783b47e4b, type: 3}
+  joystick: {fileID: 1912388983}
+  ataque: {fileID: 1151676796}
+  habilidad: {fileID: 1859559433}
+  cameraVirtual: {fileID: 862506966}
+  textoVida: {fileID: 649541525}
+  vida: {fileID: 915476153}
 --- !u!1 &1306248753
 GameObject:
   m_ObjectHideFlags: 0
@@ -3819,19 +3821,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1859559434}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 407211434}
-        m_TargetAssemblyTypeName: PersonajeController, Assembly-CSharp
-        m_MethodName: AtacarEspecial
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1859559434
 MonoBehaviour:
   m_ObjectHideFlags: 0
