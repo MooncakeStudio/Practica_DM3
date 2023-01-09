@@ -9,9 +9,4 @@ public class EleccionPersonaje : MonoBehaviour
     {
         GameManager.eleccionPersonaje = (Clase)eleccion;
     }
-
-    public void PlaySound(AudioClip clip)
-    {
-        src.PlayOneShot(clip);
-    }
 }

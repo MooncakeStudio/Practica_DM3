@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.574817, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -421,8 +421,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1829823480}
-        m_TargetAssemblyTypeName: EleccionPersonaje, Assembly-CSharp
+      - m_Target: {fileID: 1768350528}
+        m_TargetAssemblyTypeName: Audio, Assembly-CSharp
         m_MethodName: PlaySound
         m_Mode: 2
         m_Arguments:
@@ -684,7 +684,7 @@ MonoBehaviour:
           m_StringArgument: MenuPPal
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1829823483}
+      - m_Target: {fileID: 1768350528}
         m_TargetAssemblyTypeName: Audio, Assembly-CSharp
         m_MethodName: PlaySoundCambioEscena
         m_Mode: 2
@@ -1197,7 +1197,7 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2432090755550338912, guid: aae88f6504451d049a23110de3b57ce7, type: 3}
---- !u!1 &1829823479
+--- !u!1 &1768350526
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1205,52 +1205,23 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1829823481}
-  - component: {fileID: 1829823480}
-  - component: {fileID: 1829823482}
-  - component: {fileID: 1829823483}
+  - component: {fileID: 1768350529}
+  - component: {fileID: 1768350528}
+  - component: {fileID: 1768350527}
   m_Layer: 0
-  m_Name: eleccion
+  m_Name: Audio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1829823480
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1829823479}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6048738a6517e14298da16fd909e056, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  src: {fileID: 1829823482}
---- !u!4 &1829823481
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1829823479}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 682.42487, y: 314.1344, z: 4.0532227}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &1829823482
+--- !u!82 &1768350527
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1829823479}
+  m_GameObject: {fileID: 1768350526}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: e43c93814a58c8f478d7a7e78cf0df30, type: 2}
@@ -1340,7 +1311,52 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1829823483
+--- !u!114 &1768350528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1768350526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 142a41751cee3d64480a3cdb08e6b3a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  src: {fileID: 1768350527}
+--- !u!4 &1768350529
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1768350526}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 899.73975, y: 567.6493, z: 387.45605}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1829823479
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1829823481}
+  - component: {fileID: 1829823480}
+  m_Layer: 0
+  m_Name: eleccion
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1829823480
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1349,10 +1365,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 1829823479}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 142a41751cee3d64480a3cdb08e6b3a5, type: 3}
+  m_Script: {fileID: 11500000, guid: c6048738a6517e14298da16fd909e056, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  src: {fileID: 1829823482}
+  src: {fileID: 0}
+--- !u!4 &1829823481
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1829823479}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 682.42487, y: 314.1344, z: 4.0532227}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1944994563
 GameObject:
   m_ObjectHideFlags: 0
@@ -1448,8 +1479,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1829823480}
-        m_TargetAssemblyTypeName: EleccionPersonaje, Assembly-CSharp
+      - m_Target: {fileID: 1768350528}
+        m_TargetAssemblyTypeName: Audio, Assembly-CSharp
         m_MethodName: PlaySound
         m_Mode: 2
         m_Arguments:
@@ -1678,8 +1709,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1829823480}
-        m_TargetAssemblyTypeName: EleccionPersonaje, Assembly-CSharp
+      - m_Target: {fileID: 1768350528}
+        m_TargetAssemblyTypeName: Audio, Assembly-CSharp
         m_MethodName: PlaySound
         m_Mode: 2
         m_Arguments:

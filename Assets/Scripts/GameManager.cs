@@ -23,11 +23,14 @@ public class GameManager : MonoBehaviour
 
     private bool nuevaRonda = true;
 
+    private AudioSource asrc;
 
     // METODOS
-    private AudioSource audioSource;
+
     public void Awake()
     {
+        asrc = gameObject.GetComponent<AudioSource>();
+
         if (FindObjectsOfType(GetType()).Length > 1)
         {
             Destroy(gameObject);
@@ -49,8 +52,7 @@ public class GameManager : MonoBehaviour
         ronda = 0;
         enemigosGenerar = 5;
 
-        audioSource = GetComponent<AudioSource>();
-        audioSource.volume = 1;
+        asrc.volume = 1;
     }
 
     private void Update()
@@ -109,7 +111,7 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator playOnce(AudioClip clip)
     {
-        audioSource.PlayOneShot(clip);
+        asrc.PlayOneShot(clip);
         yield return new WaitForSeconds(clip.length);
     }
 
