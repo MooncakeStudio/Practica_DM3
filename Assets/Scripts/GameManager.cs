@@ -115,6 +115,18 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(clip.length);
     }
 
+    public AudioSource GetAudioSource() { return asrc; }
+
+    public void setClip(AudioClip clip)
+    {
+        if (clip.name != asrc.clip.name)
+        {
+            asrc.Stop();
+            asrc.clip = clip;
+            asrc.Play();
+        }
+    }
+
 }
 
 

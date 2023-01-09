@@ -679,6 +679,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44d1ccf4cfd7407418ef34bbdc83b8c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+
+  menuClip: {fileID: 0}
+  batallaClip: {fileID: 0}
+
 --- !u!1 &291105218
 GameObject:
   m_ObjectHideFlags: 0
@@ -818,6 +822,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 291105218}
   m_CullTransparentMesh: 1
+
 --- !u!1 &443097287
 GameObject:
   m_ObjectHideFlags: 0
@@ -850,6 +855,7 @@ MonoBehaviour:
   ladron: {fileID: 1818836889}
   mago: {fileID: 514798276}
   guerrero: {fileID: 1410680810}
+  menuClip: {fileID: 8300000, guid: ffad9b47f899c2f4994f7b76d67ad021, type: 3}
 --- !u!4 &443097289
 Transform:
   m_ObjectHideFlags: 0
@@ -1537,6 +1543,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44d1ccf4cfd7407418ef34bbdc83b8c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  menuClip: {fileID: 0}
+  batallaClip: {fileID: 0}
 --- !u!1 &1071184734
 GameObject:
   m_ObjectHideFlags: 0
