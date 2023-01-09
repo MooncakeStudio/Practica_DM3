@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class EleccionPersonaje : MonoBehaviour
 {
+    public AudioSource src;
     public void CambiarEleccion(int eleccion)
     {
         GameManager.eleccionPersonaje = (Clase)eleccion;
+    }
+
+    public void PlaySound(AudioClip clip)
+    {
+        src.PlayOneShot(clip);
     }
 }
