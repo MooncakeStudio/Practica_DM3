@@ -7,6 +7,10 @@ public class MagoController : PersonajeController
 
     [Header("Prefab fueguito")]
     [SerializeField] private SphereCollider fueguito;
+    [SerializeField] private ParticleSystem fuego;
+    [SerializeField] private ParticleSystem humo;
+    [Header("Prefab basico")]
+    [SerializeField] private GameObject basiquito;
 
     private void Awake()
     {
@@ -22,6 +26,8 @@ public class MagoController : PersonajeController
     {
         this.personaje.RealizarAtaque();
         GetComponent<Animator>().SetTrigger("Atacar");
+        StartCoroutine(ataqueBasico());
+
     }
 
     new public void AtacarEspecial() 
@@ -29,7 +35,8 @@ public class MagoController : PersonajeController
         Debug.Log("Ataque mago");
         personaje.RealizarAtaqueEspecial();
         fueguito.enabled= true;
-
+        fuego.Play();
+        humo.Play();
         GetComponent<Animator>().SetTrigger("Especial");
     }
 
@@ -37,6 +44,16 @@ public class MagoController : PersonajeController
 
     public void FinAtacarEspecial()
     {
+        fuego.Stop();
+        humo.Stop();
         fueguito.enabled = false;
+    }
+
+    IEnumerator ataqueBasico()
+    {
+        var ataque = Instantiate(basiquito, transform.position + (transform.forward * 15), transform.rotation);
+        ataque.GetComponent<AtaqueBasicoMagoDatos>().ataque = personaje.GetAtaque();
+        yield return new WaitForSeconds(0.5f);
+        Destroy(ataque);
     }
 }
