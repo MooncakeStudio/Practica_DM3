@@ -155,6 +155,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
+    Android: com.DefaultCompany.Prctica3
     Standalone: com.DefaultCompany.Pr--ctica-3
   buildNumber:
     Standalone: 0
