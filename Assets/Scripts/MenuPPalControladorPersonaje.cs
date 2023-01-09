@@ -5,7 +5,7 @@ using UnityEngine;
 public class MenuPPalControladorPersonaje : MonoBehaviour
 {
     //cambiar por lo que este estatico luego en game manager
-    public int personaje = 0;
+    //public int personaje = 0;
     private Vector3 vectorReset = new Vector3(-73.1f, 65.6f, 61f);
     private Vector3 vectorPos = new Vector3(0.6f, 14.7f, 61f);
     [SerializeField] GameObject ladron;
@@ -18,10 +18,10 @@ public class MenuPPalControladorPersonaje : MonoBehaviour
         mago.transform.position = vectorReset;
         guerrero.transform.position = vectorReset;
 
-        if(personaje == 0)
+        if(GameManager.eleccionPersonaje == Clase.LADRON)
         {
             ladron.transform.position = vectorPos;
-        } else if (personaje == 1)
+        } else if (GameManager.eleccionPersonaje == Clase.MAGO)
         {
             mago.transform.position = vectorPos;
         } else
