@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemigo
   - EspecialMago
+  - Espada
   layers:
   - Default
   - TransparentFX
@@ -16,7 +17,7 @@ TagManager:
   - Escenario
   - Enemigos
   - Personajes
-  - 
+  - EspadaPersonaje
   - 
   - 
   - 

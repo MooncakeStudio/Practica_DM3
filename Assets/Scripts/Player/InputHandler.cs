@@ -19,6 +19,8 @@ public class InputHandler : MonoBehaviour
 
     private Rigidbody myRB;
     private Animator animator;
+    bool atacando = false;
+    bool habilidadRecargada = true;
 
     private void Awake()
     {
@@ -54,16 +56,34 @@ public class InputHandler : MonoBehaviour
         
     }
 
+    public void Finataque()
+    {
+        atacando = false;
+        animator.ResetTrigger("Atacar");
+        animator.ResetTrigger("Especial");
+    }
+
     void Atacar()
     {
-        GetComponent<PersonajeController>().Atacar();
-        animator.SetTrigger("Atacar");
+        if (!atacando)
+        {
+            atacando = true;
+            GetComponent<PersonajeController>().Atacar();
+            animator.SetTrigger("Atacar");
+        }
+        
     }
 
     void Habilidad()
     {
-        GetComponent<PersonajeController>().AtacarEspecial();
-        animator.SetTrigger("Especial");
+        if (habilidadRecargada)
+        {
+            habilidadRecargada = false;
+            GetComponent<PersonajeController>().AtacarEspecial();
+            animator.SetTrigger("Especial");
+            StartCoroutine(recargarHabilidad());
+        }
+        
     }
 
     public void SetComponentes(Joystick joystick, Button ataque, Button habilidad, float Speed)
@@ -125,5 +145,11 @@ public class InputHandler : MonoBehaviour
         habilidadUp.callback.AddListener((e) => GetComponent<MagoController>().FinAtacarEspecial());
         habilidad.GetComponent<EventTrigger>().triggers.Add(habilidadUp);
 
+    }
+
+    IEnumerator recargarHabilidad()
+    {
+        yield return new WaitForSeconds(GetComponent<PersonajeController>().GetTiempoRecarga());
+        habilidadRecargada = true;
     }
 }

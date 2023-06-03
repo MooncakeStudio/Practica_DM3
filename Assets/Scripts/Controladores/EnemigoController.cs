@@ -65,5 +65,9 @@ public class EnemigoController : MonoBehaviour
             Debug.Log("Me atacan");
             personaje.herida(other.gameObject.GetComponentInParent<MagoController>().GetAtaque());
         }
+        else if (other.CompareTag("Espada"))
+        {
+            personaje.herida(other.gameObject.GetComponentInParent<GuerreroController>().GetAtaque());
+        }
     }
 }

@@ -14,10 +14,13 @@ public class Guerrero : Personaje
 
     override public void RealizarAtaque()
     {
+
         Debug.Log("Guerrero: He realizado un ataque");
     }
+
     public override void RealizarAtaqueEspecial()
     {
+
         Debug.Log("Guerrero: He realizado un ataque especial");
     }
 }

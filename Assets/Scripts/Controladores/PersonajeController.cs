@@ -6,6 +6,7 @@ using UnityEngine;
 public class PersonajeController : MonoBehaviour
 {
     protected Personaje personaje;
+    protected int tiempoRecarga;
     public void Awake()
     {
         personaje = new Arquero();
@@ -36,4 +37,7 @@ public class PersonajeController : MonoBehaviour
     {
         this.personaje = personaje;
     }
+
+    public int GetTiempoRecarga() { return this.tiempoRecarga;}
+    public void SetTiempoRecarga(int tiempoRecarga) { this.tiempoRecarga = tiempoRecarga; }
 }
