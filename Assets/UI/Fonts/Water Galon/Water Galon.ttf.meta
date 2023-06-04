@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: a211662ce74febe4b905f056ea9d6b6f
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 18
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Water Galon
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: e1d400427cf5e2341a24fb7b52e9ed29, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
