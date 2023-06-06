@@ -1988,9 +1988,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5016dc78a866d246ac043440c32f0ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mostrarPuntuaciones: {fileID: 0}
   enemigosDerrotados: 0
   ronda: 0
+  enemigosTotales: 0
 --- !u!82 &1672151268
 AudioSource:
   m_ObjectHideFlags: 0
