@@ -7,7 +7,7 @@ public class EnemigoController : MonoBehaviour
 {
     private Rigidbody rb;
     private Vector3 offset = new Vector3(2, 0, 2);
-    Personaje personaje;
+    Personaje personaje = new Personaje();
 
     private void Start()
     {
@@ -79,6 +79,12 @@ public class EnemigoController : MonoBehaviour
         {
             Debug.Log("Me atacan");
             personaje.herida(other.gameObject.GetComponentInParent<AtaqueBasicoMagoDatos>().ataque);
+        }
+        else if (other.CompareTag("Espada"))
+        {
+            //Debug.Log(other.gameObject);
+            personaje.herida(other.gameObject.GetComponentInParent<GuerreroController>().GetAtaque());
+            Debug.Log("Me atacaron");
         }
 
         if (other.CompareTag("PersonajeObjetivo"))
