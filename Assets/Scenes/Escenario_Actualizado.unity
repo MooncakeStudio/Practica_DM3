@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.574817, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -359,8 +359,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1012465138}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+      - m_Target: {fileID: 1907556821}
+        m_TargetAssemblyTypeName: DataHandler, Assembly-CSharp
         m_MethodName: CerrarPuntuaciones
         m_Mode: 1
         m_Arguments:
@@ -972,8 +972,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1012465138}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+      - m_Target: {fileID: 1907556821}
+        m_TargetAssemblyTypeName: DataHandler, Assembly-CSharp
         m_MethodName: MostrarPuntuaciones
         m_Mode: 1
         m_Arguments:
@@ -1332,8 +1332,9 @@ MonoBehaviour:
   ataque: {fileID: 1151676796}
   habilidad: {fileID: 1859559433}
   cameraVirtual: {fileID: 862506966}
-  textoVida: {fileID: 0}
-  vida: {fileID: 0}
+  textoVida: {fileID: 1151573191}
+  vida: {fileID: 839574086}
+  batallaClip: {fileID: 8300000, guid: 02bf5f01d31e7164ba9884d29f3682fd, type: 3}
 --- !u!4 &568595782
 Transform:
   m_ObjectHideFlags: 0
@@ -2451,7 +2452,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1012465139}
   - component: {fileID: 1012465138}
-  - component: {fileID: 1012465137}
   - component: {fileID: 1012465141}
   - component: {fileID: 1012465140}
   m_Layer: 0
@@ -2461,18 +2461,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1012465137
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1012465136}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ce9dd2c63c85c94ea39f2933558fb68, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1012465138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2485,7 +2473,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5016dc78a866d246ac043440c32f0ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mostrarPuntuaciones: {fileID: 584110528}
   enemigosDerrotados: 0
   ronda: 0
 --- !u!4 &1012465139
@@ -3436,7 +3423,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1012465137}
+      - m_Target: {fileID: 1907556821}
         m_TargetAssemblyTypeName: DataHandler, Assembly-CSharp
         m_MethodName: Guardar
         m_Mode: 1
@@ -4685,13 +4672,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1907556820}
+  - component: {fileID: 1907556821}
   m_Layer: 5
   m_Name: Botones Debug
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1907556820
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4701,7 +4689,7 @@ RectTransform:
   m_GameObject: {fileID: 1907556819}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3.2445, y: 3.2445, z: 3.2445}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1376979610}
@@ -4712,9 +4700,22 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1300, y: 595}
+  m_AnchoredPosition: {x: 283, y: -11}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1907556821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1907556819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ce9dd2c63c85c94ea39f2933558fb68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mostrarPuntuaciones: {fileID: 584110528}
 --- !u!224 &1912388982 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}

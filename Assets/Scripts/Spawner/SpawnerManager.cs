@@ -45,7 +45,7 @@ public class SpawnerManager : MonoBehaviour
 
         float posX = Mathf.Pow(xPos, 2);
         float posZCuadrado = Mathf.Pow(radius, 2) - posX;
-
+        if (posZCuadrado < 0) posZCuadrado = -posZCuadrado;
         float posZ = Mathf.Sqrt(posZCuadrado);
         int factoNegativo = Random.Range(1, 3);
         if (factoNegativo == 1)
