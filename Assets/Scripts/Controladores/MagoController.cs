@@ -11,6 +11,7 @@ public class MagoController : PersonajeController
     [SerializeField] private ParticleSystem humo;
     [Header("Prefab basico")]
     [SerializeField] private GameObject basiquito;
+    [SerializeField] private List<GameObject> spawnPoints;
 
     private void Awake()
     {
@@ -52,9 +53,12 @@ public class MagoController : PersonajeController
 
     IEnumerator ataqueBasico()
     {
-        var ataque = Instantiate(basiquito, transform.position + (transform.forward * 15), transform.rotation);
-        ataque.GetComponent<AtaqueBasicoMagoDatos>().ataque = personaje.GetAtaque();
-        yield return new WaitForSeconds(0.5f);
-        Destroy(ataque);
+        var ataque = Instantiate(basiquito);
+        ataque.transform.position = spawnPoints[0].transform.position + transform.forward;
+        ataque.transform.eulerAngles = new Vector3(90, transform.rotation.eulerAngles.y, 0);
+        ataque.GetComponent<BolaMagica>().SetAtaque(personaje.GetAtaque());
+        ataque.GetComponent<Rigidbody>().velocity = transform.forward*15;
+        yield return new WaitForSeconds(0.01f);
     }
+
 }
