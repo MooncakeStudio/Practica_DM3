@@ -126,4 +126,29 @@ public class InputHandler : MonoBehaviour
         habilidad.GetComponent<EventTrigger>().triggers.Add(habilidadUp);
 
     }
+
+    public void changeToArquero()
+    {
+        ataque.GetComponent<EventTrigger>().triggers.Clear();
+        var ataqueDown = new EventTrigger.Entry();
+        ataqueDown.eventID = EventTriggerType.PointerDown;
+        ataqueDown.callback.AddListener((e) => GetComponent<ArqueroController>().Atacar());
+        ataque.GetComponent<EventTrigger>().triggers.Add(ataqueDown);
+
+        var ataqueUp = new EventTrigger.Entry();
+        ataqueUp.eventID = EventTriggerType.PointerUp;
+        ataqueUp.callback.AddListener((e) => Debug.Log("Ataque parando"));
+        ataque.GetComponent<EventTrigger>().triggers.Add(ataqueUp);
+
+        habilidad.GetComponent<EventTrigger>().triggers.Clear();
+        var habilidadDown = new EventTrigger.Entry();
+        habilidadDown.eventID = EventTriggerType.PointerDown;
+        habilidadDown.callback.AddListener((e) => GetComponent<ArqueroController>().AtacarEspecial());
+        habilidad.GetComponent<EventTrigger>().triggers.Add(habilidadDown);
+
+        var habilidadUp = new EventTrigger.Entry();
+        habilidadUp.eventID = EventTriggerType.PointerUp;
+        habilidadUp.callback.AddListener((e) => Debug.Log("Ataque parando"));
+        habilidad.GetComponent<EventTrigger>().triggers.Add(habilidadUp);
+    }
 }

@@ -9,6 +9,7 @@ TagManager:
   - PersonajeObjetivo
   - BasicoMago
   - Espada
+  - Flecha
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - Enemigos
   - Personajes
   - EspadaPersonaje
-  - 
+  - FlechaPersonaje
   - 
   - 
   - 

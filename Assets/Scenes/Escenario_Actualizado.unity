@@ -1325,7 +1325,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabs:
-  - {fileID: 7057763601906586836, guid: b530bcce90b4e114aa547d8579835281, type: 3}
+  - {fileID: 8975388156444118591, guid: 971b9fa75a6dbd049a9dbf1d57a282cc, type: 3}
   - {fileID: 7057763601906586836, guid: e7939942fbd4b5a4686f2ec28f198dac, type: 3}
   - {fileID: 7057763601906586836, guid: 89baa216b3a520b4f99e71e783b47e4b, type: 3}
   joystick: {fileID: 1912388983}
@@ -2475,6 +2475,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemigosDerrotados: 0
   ronda: 0
+  enemigosTotales: 0
 --- !u!4 &1012465139
 Transform:
   m_ObjectHideFlags: 0
@@ -4679,7 +4680,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1907556820
 RectTransform:
   m_ObjectHideFlags: 0
