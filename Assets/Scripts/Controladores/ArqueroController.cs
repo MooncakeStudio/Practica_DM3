@@ -42,10 +42,10 @@ public class ArqueroController : PersonajeController
         //Debug.Log("Entro en corutina");
         //var ataque = Instantiate(basiquito, transform.position + (transform.forward), transform.rotation);
         var ataque = Instantiate(basiquito);
-        ataque.transform.position = transform.position + (transform.forward);
+        ataque.transform.position = spawnPoints[0].transform.position + transform.forward;
         ataque.transform.eulerAngles = new Vector3(90, transform.rotation.eulerAngles.y, 0);
         ataque.GetComponent<FlechaArquero>().SetAtaque(personaje.GetAtaque());
-        ataque.GetComponent<Rigidbody>().velocity = transform.forward*5;
+        ataque.GetComponent<Rigidbody>().velocity = transform.forward*15;
         yield return new WaitForSeconds(0.01f);
     }
 
@@ -57,7 +57,7 @@ public class ArqueroController : PersonajeController
             ataque.transform.position = spawnPoints[i].transform.position + (transform.forward);
             ataque.transform.eulerAngles = new Vector3(90, transform.rotation.eulerAngles.y, 0);
             ataque.GetComponent<FlechaArquero>().SetAtaque(personaje.GetAtaque());
-            ataque.GetComponent<Rigidbody>().velocity = transform.forward * 5;
+            ataque.GetComponent<Rigidbody>().velocity = transform.forward * 15;
         }
         yield return new WaitForSeconds(0.01f);
     }
