@@ -81,7 +81,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8975388156444118591, guid: 971b9fa75a6dbd049a9dbf1d57a282cc, type: 3}
       propertyPath: m_Name
-      value: Arquero
+      value: Arquero Variant
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7676986010393081389, guid: 971b9fa75a6dbd049a9dbf1d57a282cc, type: 3}
