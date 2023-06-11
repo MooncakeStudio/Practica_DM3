@@ -28,7 +28,7 @@ public class ArqueroController : PersonajeController
 
     new public void AtacarEspecial()
     {
-        Debug.Log("Ataque mago");
+        Debug.Log("Ataque arquero");
         personaje.RealizarAtaqueEspecial();
         GetComponent<Animator>().SetTrigger("Especial");
         StartCoroutine(ataqueEspecial());

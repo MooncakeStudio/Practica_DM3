@@ -63,6 +63,7 @@ public class EnemigoController : MonoBehaviour
 
     public void TakeDamage(int d)
     {
+        Debug.Log("EL MAGO HACE DAÑO");
         personaje.herida(d);
     }
 
@@ -100,11 +101,12 @@ public class EnemigoController : MonoBehaviour
         {
             Debug.Log("Me atacan");
             personaje.herida(other.gameObject.GetComponentInParent<MagoController>().GetAtaque()*3/5);
-        }else if (other.CompareTag("BasicoMago"))
-        {
-            Debug.Log("Me atacan");
-            personaje.herida(other.gameObject.GetComponentInParent<AtaqueBasicoMagoDatos>().ataque);
         }
+        // else if (other.CompareTag("BasicoMago"))
+        // {
+        //     Debug.Log("Me atacan");
+        //     personaje.herida(other.gameObject.GetComponentInParent<MagoController>().GetAtaque());
+        // }
         else if (other.CompareTag("Espada"))
         {
             //Debug.Log(other.gameObject);
