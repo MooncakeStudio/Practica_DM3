@@ -9,11 +9,12 @@ public class FlechaArquero : MonoBehaviour
 
     public void SetAtaque(int ataque) { this.ataque = ataque; }
 
-    private void OnCollisionEnter(Collision collision)
+
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("Enemigo"))
+        if (other.CompareTag("Enemigo"))
         {
-            collision.gameObject.GetComponent<EnemigoController>().TakeDamage(ataque);
+            other.GetComponent<EnemigoController>().TakeDamage(ataque);
         }
 
         Destroy(gameObject);

@@ -14,6 +14,8 @@ public class Personaje
     int defensa;
 
     
+
+
     // CONSTRUCTOR
 
     public Personaje(string nombre = "",  int vida = 100, int ataque = 10, int defensa = 5)
@@ -33,7 +35,11 @@ public class Personaje
     public int GetAtaque() { return this.ataque; }
     public int GetDefensa() { return this.defensa; }
 
-    public void herida(int d) { vida -= d; }
+    public void herida(int d) 
+    { 
+        vida -= d;
+        
+    }
 
 
     // METODOS

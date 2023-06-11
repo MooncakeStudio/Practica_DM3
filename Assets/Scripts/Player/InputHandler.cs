@@ -11,8 +11,8 @@ public class InputHandler : MonoBehaviour
     [SerializeField] private Joystick joystick;
 
     [Header("Botones ataque")]
-    [SerializeField] private Button ataque;
-    [SerializeField] private Button habilidad;
+    [SerializeField] public Button ataque;
+    [SerializeField] public Button habilidad;
 
     [Header("Parametros")]
     [SerializeField] private float Speed;
@@ -42,7 +42,7 @@ public class InputHandler : MonoBehaviour
             if (joystick.Horizontal != 0 || joystick.Vertical != 0)
             {
                 var toRotate = Quaternion.LookRotation(new Vector3(joystick.Horizontal, 0, joystick.Vertical), Vector3.up);
-                transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotate, 360 * Time.deltaTime);
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotate, 540 * Time.deltaTime);
                 animator.SetBool("Walking", true);
 
             }

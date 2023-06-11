@@ -1,12 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ArqueroController : PersonajeController
 {
     [Header("Prefab flecha")]
     [SerializeField] private GameObject basiquito;
     [SerializeField] private List<GameObject> spawnPoints;
+    [Header("CD")]
+    [SerializeField] private bool cdBasico = true;
+    [SerializeField] private bool cdEspecial = true;
+    [Header("Botones")]
+    private Button botonBasico;
+    private Button botonEspecial;
 
     private void Awake()
     {
@@ -17,22 +24,29 @@ public class ArqueroController : PersonajeController
     private void Start()
     {
         GetComponent<InputHandler>().changeToArquero();
+        botonBasico = GetComponent<InputHandler>().ataque;
+        botonEspecial = GetComponent<InputHandler>().habilidad;
     }
     new public void Atacar()
-    {
-        this.personaje.RealizarAtaque();
-        GetComponent<Animator>().SetTrigger("Atacar");
-        StartCoroutine(ataqueBasico());
+    {      
+        if (cdBasico){
+            this.personaje.RealizarAtaque();
+            GetComponent<Animator>().SetTrigger("Atacar");
+            StartCoroutine(ataqueBasico());
+            StartCoroutine(cooldownBasico());
+        }
 
     }
 
     new public void AtacarEspecial()
     {
-        Debug.Log("Ataque mago");
-        personaje.RealizarAtaqueEspecial();
-        GetComponent<Animator>().SetTrigger("Especial");
-        StartCoroutine(ataqueEspecial());
-
+        if(cdEspecial){
+            Debug.Log("Ataque arquero");
+            personaje.RealizarAtaqueEspecial();
+            GetComponent<Animator>().SetTrigger("Especial");
+            StartCoroutine(ataqueEspecial());
+            StartCoroutine(cooldownEspecial());
+        }
     }
 
     public int GetAtaque() { return personaje.GetAtaque(); }
@@ -60,5 +74,20 @@ public class ArqueroController : PersonajeController
             ataque.GetComponent<Rigidbody>().velocity = transform.forward * 15;
         }
         yield return new WaitForSeconds(0.01f);
+    }
+    IEnumerator cooldownBasico(){
+        cdBasico = false;
+        botonBasico.GetComponent<Image>().color = new Color(0.4f,0.4f,0.4f,0.5f);
+        yield return new WaitForSeconds(1);
+        botonBasico.GetComponent<Image>().color = new Color(1.0f,1.0f,1.0f,1.0f);
+        cdBasico = true;
+    }
+
+    IEnumerator cooldownEspecial(){
+        cdEspecial = false;
+        botonEspecial.GetComponent<Image>().color = new Color(0.4f,0.4f,0.4f,0.5f);
+        yield return new WaitForSeconds(7);
+        botonEspecial.GetComponent<Image>().color = new Color(1.0f,1.0f,1.0f,1.0f);
+        cdEspecial = true;
     }
 }

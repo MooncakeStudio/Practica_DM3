@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MagoController : PersonajeController
 {
@@ -11,6 +12,13 @@ public class MagoController : PersonajeController
     [SerializeField] private ParticleSystem humo;
     [Header("Prefab basico")]
     [SerializeField] private GameObject basiquito;
+    [SerializeField] private List<GameObject> spawnPoints;
+    [Header("CD")]
+    [SerializeField] private bool cdBasico = true;
+    [SerializeField] private bool cdEspecial = true;
+    [Header("Botones")]
+    private Button botonBasico;
+    private Button botonEspecial;
 
     private void Awake()
     {
@@ -21,23 +29,33 @@ public class MagoController : PersonajeController
     private void Start()
     {
         GetComponent<InputHandler>().changeCallback();
+
+        botonBasico = GetComponent<InputHandler>().ataque;
+        botonEspecial = GetComponent<InputHandler>().habilidad;
+
     }
     public void Atacar()
     {
-        this.personaje.RealizarAtaque();
-        GetComponent<Animator>().SetTrigger("Atacar");
-        StartCoroutine(ataqueBasico());
+        if(cdBasico){
+            this.personaje.RealizarAtaque();
+            GetComponent<Animator>().SetTrigger("Atacar");
+            StartCoroutine(ataqueBasico());
+            StartCoroutine(cooldownBasico());
+        }
 
     }
 
     new public void AtacarEspecial() 
     {
-        Debug.Log("Ataque mago");
-        personaje.RealizarAtaqueEspecial();
-        fueguito.enabled= true;
-        fuego.Play();
-        humo.Play();
-        GetComponent<Animator>().SetTrigger("Especial");
+        if(cdEspecial){
+            Debug.Log("Ataque mago");
+            personaje.RealizarAtaqueEspecial();
+            fueguito.enabled= true;
+            fuego.Play();
+            humo.Play();
+            GetComponent<Animator>().SetTrigger("Especial");
+            StartCoroutine(cooldownEspecial());
+        }
         
     }
 
@@ -52,9 +70,28 @@ public class MagoController : PersonajeController
 
     IEnumerator ataqueBasico()
     {
-        var ataque = Instantiate(basiquito, transform.position + (transform.forward * 15), transform.rotation);
-        ataque.GetComponent<AtaqueBasicoMagoDatos>().ataque = personaje.GetAtaque();
-        yield return new WaitForSeconds(0.5f);
-        Destroy(ataque);
+        var ataque = Instantiate(basiquito);
+        ataque.transform.position = spawnPoints[0].transform.position + transform.forward;
+        ataque.transform.eulerAngles = new Vector3(90, transform.rotation.eulerAngles.y, 0);
+        ataque.GetComponent<BolaMagica>().SetAtaque(personaje.GetAtaque());
+        ataque.GetComponent<Rigidbody>().velocity = transform.forward*15;
+        yield return new WaitForSeconds(0.01f);
     }
+
+    IEnumerator cooldownBasico(){
+        cdBasico = false;
+        botonBasico.GetComponent<Image>().color = new Color(0.4f,0.4f,0.4f,0.5f);
+        yield return new WaitForSeconds(1);
+        botonBasico.GetComponent<Image>().color = new Color(1.0f,1.0f,1.0f,1.0f);
+        cdBasico = true;
+    }
+
+    IEnumerator cooldownEspecial(){
+        cdEspecial = false;
+        botonEspecial.GetComponent<Image>().color = new Color(0.4f,0.4f,0.4f,0.5f);
+        yield return new WaitForSeconds(7);
+        botonEspecial.GetComponent<Image>().color = new Color(1.0f,1.0f,1.0f,1.0f);
+        cdEspecial = true;
+    }
+
 }

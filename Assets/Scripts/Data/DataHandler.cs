@@ -17,11 +17,29 @@ public class DataHandler : MonoBehaviour
     SerializableScoreList scl;
     [SerializeField] TextMeshProUGUI mostrarPuntuaciones;
 
-
+    public static DataHandler instance;
     // METODOS
 
     public void Awake()
     {
+
+        if (FindObjectsOfType(GetType()).Length > 1)
+        {
+            Destroy(gameObject);
+        }
+
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        else
+        {
+            instance = this;
+        }
+
+        DontDestroyOnLoad(gameObject);
+
         path = Application.persistentDataPath + Path.DirectorySeparatorChar + "Puntuaciones.json";
 
         if (File.Exists(path))
