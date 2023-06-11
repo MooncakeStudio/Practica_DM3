@@ -26,6 +26,12 @@ public class ArqueroController : PersonajeController
         GetComponent<InputHandler>().changeToArquero();
         botonBasico = GetComponent<InputHandler>().ataque;
         botonEspecial = GetComponent<InputHandler>().habilidad;
+
+        botonBasico.transform.Find("Baculo").gameObject.SetActive(false);
+        botonBasico.transform.Find("Arco").gameObject.SetActive(true);
+
+        botonEspecial.transform.Find("Baculo").gameObject.SetActive(false);
+        botonEspecial.transform.Find("Arco").gameObject.SetActive(true);
     }
     new public void Atacar()
     {      
