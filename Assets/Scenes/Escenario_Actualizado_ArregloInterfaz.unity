@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.574817, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: a8365a598cc4f084c84a6dc2270d4b3f, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: d0c4b29129d38ab42a472b091820ed6c, type: 2}
 --- !u!1 &16382506
 GameObject:
   m_ObjectHideFlags: 0
@@ -1634,6 +1634,10 @@ PrefabInstance:
     - target: {fileID: 774590825008338474, guid: 0330473e57d587c4894c19d176352fe9, type: 3}
       propertyPath: m_LocalPosition.z
       value: 18.3281
+      objectReference: {fileID: 0}
+    - target: {fileID: 774590825008338478, guid: 0330473e57d587c4894c19d176352fe9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4884128703301471758, guid: 0330473e57d587c4894c19d176352fe9, type: 3}
       propertyPath: m_LocalPosition.x
