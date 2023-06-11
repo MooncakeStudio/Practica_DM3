@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Personaje/Escena pruebas personaje.unity
+    guid: 3e231ea0bc437aa429eb4ebb5d8b235c
+  - enabled: 1
     path: Assets/Scenes/MenuPPal_Actualizado.unity
     guid: 693a94efa53c8554597e5093916f64c6
   - enabled: 1
