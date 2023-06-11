@@ -11,8 +11,8 @@ public class InputHandler : MonoBehaviour
     [SerializeField] private Joystick joystick;
 
     [Header("Botones ataque")]
-    [SerializeField] private Button ataque;
-    [SerializeField] private Button habilidad;
+    [SerializeField] public Button ataque;
+    [SerializeField] public Button habilidad;
 
     [Header("Parametros")]
     [SerializeField] private float Speed;
