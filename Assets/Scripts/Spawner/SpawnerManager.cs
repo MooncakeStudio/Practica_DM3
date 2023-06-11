@@ -51,7 +51,7 @@ public class SpawnerManager : MonoBehaviour
         if (factoNegativo == 1)
             posZ = -posZ;
 
-        posicion = new Vector3(xPos, 20f, posZ);
+        posicion = new Vector3(xPos, 15.04f, posZ);
         return posicion;
     }
 }
