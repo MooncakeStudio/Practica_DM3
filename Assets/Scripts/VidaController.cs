@@ -13,6 +13,7 @@ public class VidaController : MonoBehaviour
     void Start(){
         vidaMax = gameObject.GetComponent<PersonajeController>().VidaTotal();
         vida = vidaMax;
+        bVida = GameObject.Find("Canvas/BarraVida/Relleno Vida").GetComponent<Image>();
     }
 
     void Update()

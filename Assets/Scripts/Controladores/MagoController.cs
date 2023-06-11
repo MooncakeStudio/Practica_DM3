@@ -88,9 +88,9 @@ public class MagoController : PersonajeController
 
     IEnumerator cooldownEspecial(){
         cdEspecial = false;
-        botonBasico.GetComponent<Image>().color = new Color(0.4f,0.4f,0.4f,0.5f);
+        botonEspecial.GetComponent<Image>().color = new Color(0.4f,0.4f,0.4f,0.5f);
         yield return new WaitForSeconds(7);
-        botonBasico.GetComponent<Image>().color = new Color(1.0f,1.0f,1.0f,1.0f);
+        botonEspecial.GetComponent<Image>().color = new Color(1.0f,1.0f,1.0f,1.0f);
         cdEspecial = true;
     }
 

@@ -22,8 +22,9 @@ public class PersonajeController : MonoBehaviour
 
     public void TakeDamage(int d)
     {
-        Debug.Log("Personaje recibe daño");
+        Debug.Log("Personaje recibe daï¿½o");
         personaje.herida(d);
+        GetComponent<VidaController>().actualizarVida(personaje.GetVida());
         if (personaje.GetVida() <= 0)
         {
             Muerto?.Invoke();
