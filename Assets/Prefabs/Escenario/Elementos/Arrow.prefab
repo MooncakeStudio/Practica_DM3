@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 7003084961369999632}
   - component: {fileID: 9222482382778141102}
   - component: {fileID: 7111271161628372287}
+  - component: {fileID: 3153607570556664889}
+  - component: {fileID: 4759183957706624380}
   m_Layer: 0
   m_Name: Arrow
   m_TagString: Untagged
@@ -83,3 +85,32 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!208 &3153607570556664889
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3843310281717772314}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.13900001, y: 0.010000001, z: 0.010000001}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.117000006, y: 0, z: 0}
+  m_TimeToStationary: 0.5
+--- !u!65 &4759183957706624380
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3843310281717772314}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.2771139, y: 0.020000007, z: 0.020000001}
+  m_Center: {x: 0.11740941, y: 0.00000023841858, z: 0.0000019073486}

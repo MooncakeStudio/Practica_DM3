@@ -618,7 +618,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: MenuPPal_Actualizado
+          m_StringArgument: MenuPPal_Actualizado_ArregloInterfaz
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1768350528}

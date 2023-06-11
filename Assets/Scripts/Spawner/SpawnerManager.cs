@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpawnerManager : MonoBehaviour
 {
 
-    private int radius = 105;
+    private int radius = 35;
 
     [Header("Prefab enemigo")]
     [SerializeField] private GameObject prefabEnemigo;
@@ -39,7 +39,7 @@ public class SpawnerManager : MonoBehaviour
 
         //f�rmula circunferencia conociendo centro y radio
         // (x -xc)^2 + (y+yc)^2 = r^2, siendo xc e yc los puntos del centro. El centro est� en (0,0) y el radio es 105.
-        int xPos = Random.Range(-106, 0);
+        int xPos = Random.Range(-35, 0);
         
         //xPos = (int)Mathf.Pow(xPos, factoNegativo);
 

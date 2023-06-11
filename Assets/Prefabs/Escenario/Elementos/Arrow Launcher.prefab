@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 8718166177107701230}
   - component: {fileID: 3095540092681297549}
   - component: {fileID: 8467188797666966259}
+  - component: {fileID: 4444586931099273153}
+  - component: {fileID: 5282349950055325097}
   m_Layer: 0
   m_Name: Arrow Launcher
   m_TagString: Untagged
@@ -83,3 +85,32 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &4444586931099273153
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2492924755559600298}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.010000004, y: 0.073677965, z: 0.07096092}
+  m_Center: {x: -0.005000002, y: -0.0005206764, z: -0.0004940778}
+--- !u!208 &5282349950055325097
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2492924755559600298}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5

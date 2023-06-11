@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 5816735696407515487}
   - component: {fileID: 7428381755469160186}
   - component: {fileID: 4679836568841333296}
+  - component: {fileID: 5648995738454792355}
+  - component: {fileID: 3728980624337349727}
   m_Layer: 0
   m_Name: wooden_beer_mug
   m_TagString: Untagged
@@ -83,3 +85,33 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!208 &5648995738454792355
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6625607456502582245}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 0.014, y: 0.011000001, z: 0.014}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.003, y: 0, z: 0.014}
+  m_TimeToStationary: 0.5
+--- !u!136 &3728980624337349727
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6625607456502582245}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.020215351
+  m_Height: 0.040430706
+  m_Direction: 1
+  m_Center: {x: -0.003383157, y: -0.0000022741165, z: 0.012564718}
