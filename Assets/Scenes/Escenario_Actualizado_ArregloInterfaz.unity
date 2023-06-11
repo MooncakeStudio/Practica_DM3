@@ -1304,7 +1304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a968e35e833e0241abb8dbc6510e205, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabEnemigo: {fileID: 5257618462600747030, guid: c87e0823374c93e428f69c13b5bed818, type: 3}
+  prefabEnemigo: {fileID: 2615544270011977779, guid: c6e41f8cb5fd5a54192aef81a3241896, type: 3}
 --- !u!4 &524776755
 Transform:
   m_ObjectHideFlags: 0
