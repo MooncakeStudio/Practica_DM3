@@ -5,6 +5,9 @@ using UnityEngine;
 public class PersonajeController : MonoBehaviour
 {
     protected Personaje personaje;
+
+    public delegate void MuertoEvent();
+    public static event MuertoEvent Muerto;
     public void Awake()
     {
         personaje = new Arquero();
@@ -19,7 +22,12 @@ public class PersonajeController : MonoBehaviour
 
     public void TakeDamage(int d)
     {
+        Debug.Log("Personaje recibe daño");
         personaje.herida(d);
+        if (personaje.GetVida() <= 0)
+        {
+            Muerto?.Invoke();
+        }
     }
     public void Atacar()
     {

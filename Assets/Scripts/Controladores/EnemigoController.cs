@@ -6,15 +6,22 @@ using UnityEngine.AI;
 public class EnemigoController : MonoBehaviour
 {
     private Rigidbody rb;
-    private Vector3 offset = new Vector3(2, 0, 2);
+    private Vector3 offset = new Vector3(10, 0, 10);
     Personaje personaje = new Personaje();
+    private PersonajeController objetivo;
+
+    private bool EspecialCargado = true;
 
     private void Start()
     {
         personaje = new Guerrero();
         rb = GetComponent<Rigidbody>();
-        var posicionPersonaje = FindObjectOfType<PersonajeController>().gameObject.transform.position;
-        if(transform.position != posicionPersonaje + offset){
+        objetivo = FindObjectOfType<PersonajeController>();
+        var posicionPersonaje = objetivo.gameObject.transform.position;
+        GetComponent<NavMeshAgent>().stoppingDistance = 2f;
+        Vector2 pos = new Vector2(transform.position.x,transform.position.z);
+        Vector2 posP = new Vector2(posicionPersonaje.x,posicionPersonaje.z);
+        if(Vector2.Distance(pos,posP) > GetComponent<NavMeshAgent>().stoppingDistance){
             NavMeshAgent agente = GetComponent<NavMeshAgent>();
             agente.destination = posicionPersonaje;
         }
@@ -24,10 +31,21 @@ public class EnemigoController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var posicionPersonaje = FindObjectOfType<PersonajeController>().gameObject.transform.position;
-        if(transform.position != posicionPersonaje + offset){
+        var posicionPersonaje = objetivo.gameObject.transform.position;
+        Vector2 pos = new Vector2(transform.position.x, transform.position.z);
+        Vector2 posP = new Vector2(posicionPersonaje.x, posicionPersonaje.z);
+        if (Vector2.Distance(pos, posP) > GetComponent<NavMeshAgent>().stoppingDistance)
+        {
+            GetComponent<NavMeshAgent>().isStopped = false;
             NavMeshAgent agente = GetComponent<NavMeshAgent>();
             agente.destination = posicionPersonaje;
+            GetComponent<Animator>().SetBool("Walking", true);
+        }
+        else
+        {
+            GetComponent<Animator>().SetBool("Walking", false);
+            GetComponent<NavMeshAgent>().isStopped = true;
+            
         }
         
         /*
@@ -62,7 +80,14 @@ public class EnemigoController : MonoBehaviour
     public void Atacar()
     {
         this.personaje.RealizarAtaque();
-        transform.Find("Personaje").GetComponent<Animator>().SetTrigger("Atacar");
+        GetComponent<Animator>().SetTrigger("Atacar");
+    }
+
+    public void AtaqueEspecial()
+    {
+        EspecialCargado = false;
+        this.personaje.RealizarAtaqueEspecial();
+        GetComponent<Animator>().SetTrigger("Especial");
     }
 
     private void OnDestroy()
@@ -92,16 +117,51 @@ public class EnemigoController : MonoBehaviour
         if (other.CompareTag("PersonajeObjetivo"))
         {
             Debug.Log("ataco");
-            Atacar();
-            if(GameManager.eleccionPersonaje==Clase.LADRON){
-                other.gameObject.GetComponentInParent<PersonajeController>().TakeDamage(this.Getataque());
-            } else if(GameManager.eleccionPersonaje==Clase.MAGO){
-                other.gameObject.GetComponentInParent<MagoController>().TakeDamage(this.Getataque());
-            }else{
-                other.gameObject.GetComponentInParent<PersonajeController>().TakeDamage(this.Getataque());
-            }
+            StartCoroutine(rutinaAtaque(other.gameObject));
         }
-
-
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("PersonajeObjetivo"))
+        {
+            StopCoroutine("rutinaAtaque");
+        }
+    }
+
+    IEnumerator rutinaAtaque(GameObject other)
+    {
+        Debug.Log("Empezamos la rutina");
+        if (EspecialCargado)
+        {
+            AtaqueEspecial();
+            StartCoroutine(cooldownEspecial());
+        }
+        else
+        {
+            Atacar();
+        }
+        
+        if (GameManager.eleccionPersonaje == Clase.LADRON)
+        {
+            other.GetComponentInParent<ArqueroController>().TakeDamage(this.Getataque());
+        }
+        else if (GameManager.eleccionPersonaje == Clase.MAGO)
+        {
+            other.GetComponentInParent<MagoController>().TakeDamage(this.Getataque());
+        }
+        else
+        {
+            other.GetComponentInParent<GuerreroController>().TakeDamage(this.Getataque());
+        }
+        yield return new WaitForSeconds(1);
+        StartCoroutine(rutinaAtaque(other));
+    }
+
+    IEnumerator cooldownEspecial()
+    {
+        yield return new WaitForSeconds(5);
+        EspecialCargado = true;
+    }
+
 }
