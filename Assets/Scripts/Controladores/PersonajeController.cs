@@ -11,6 +11,8 @@ public class PersonajeController : MonoBehaviour
     [SerializeField] protected bool cdBasico = true;
     [SerializeField] protected bool cdEspecial = true;
 
+    private bool delegateInvoke = false;
+
     public delegate void MuertoEvent();
     public static event MuertoEvent Muerto;
     public void Awake()
@@ -27,11 +29,12 @@ public class PersonajeController : MonoBehaviour
 
     public void TakeDamage(int d)
     {
-        Debug.Log("Personaje recibe da�o");
+        Debug.Log("Personaje recibe da�o" + d);
         personaje.herida(d);
         GetComponent<VidaController>().actualizarVida(personaje.GetVida());
-        if (personaje.GetVida() <= 0)
+        if (personaje.GetVida() <= 0 && !delegateInvoke)
         {
+            delegateInvoke = false;
             Muerto?.Invoke();
         }
     }
@@ -47,11 +50,23 @@ public class PersonajeController : MonoBehaviour
 
     public int VidaTotal()
     {
+        return this.personaje.GetVidaMax();
+    }
+
+    public int Vida()
+    {
         return this.personaje.GetVida();
     }
 
     public void SetPersonaje(Personaje personaje)
     {
         this.personaje = personaje;
+    }
+
+    public void PasaRonda()
+    {
+        this.personaje.herida(-10);
+        this.personaje.AumentarVidaMax(5);
+        GetComponent<VidaController>().ActualizarVidaMax();
     }
 }
