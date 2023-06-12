@@ -78,6 +78,7 @@ public class DataHandler : MonoBehaviour
         File.WriteAllText(path, puntuacionesJson);
     }
 
+
     public void MostrarPuntuaciones()
     {
         if (!mostrarPuntuaciones.gameObject.activeSelf)
