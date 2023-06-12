@@ -42,7 +42,7 @@ public class InputHandler : MonoBehaviour
             if (joystick.Horizontal != 0 || joystick.Vertical != 0)
             {
                 var toRotate = Quaternion.LookRotation(new Vector3(joystick.Horizontal, 0, joystick.Vertical), Vector3.up);
-                transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotate, 540 * Time.deltaTime);
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotate, 900 * Time.deltaTime);
                 animator.SetBool("Walking", true);
 
             }
