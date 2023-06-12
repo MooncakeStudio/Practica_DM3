@@ -14,10 +14,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Escenario_Actualizado_ArregloInterfaz.unity
     guid: 3e52ba8f9b3626b4fa333b13fd38ab59
-  - enabled: 1
-    path: Assets/Scenes/MenuPPal_Actualizado.unity
-    guid: 693a94efa53c8554597e5093916f64c6
-  - enabled: 1
-    path: Assets/Scenes/Escenario_Actualizado.unity
-    guid: f246d64ad8eaab341ae84a4a729bf80f
   m_configObjects: {}
