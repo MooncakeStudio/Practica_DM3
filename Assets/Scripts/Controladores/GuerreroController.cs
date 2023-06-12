@@ -9,13 +9,6 @@ public class GuerreroController : PersonajeController
     private Button botonBasico;
     private Button botonEspecial;
 
-    [Header("CD")]
-    [SerializeField]
-    private bool cdBasico = true;
-
-    [SerializeField]
-    private bool cdEspecial = true;
-
     private void Awake()
     {
         personaje = new Guerrero();
@@ -43,7 +36,7 @@ public class GuerreroController : PersonajeController
         }
     }
 
-    new public void AtacarEspecial()
+    public void Habilidad()
     {
         if (cdEspecial)
         {

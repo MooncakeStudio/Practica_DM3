@@ -76,7 +76,7 @@ public class InputHandler : MonoBehaviour
         var triggerAtaque = this.ataque.AddComponent<EventTrigger>();
         var ataqueDown = new EventTrigger.Entry();
         ataqueDown.eventID = EventTriggerType.PointerDown;
-        ataqueDown.callback.AddListener((e) => Atacar());
+        ataqueDown.callback.AddListener((e) => GetComponent<GuerreroController>().Atacar());
         triggerAtaque.triggers.Add(ataqueDown);
 
         var ataqueUp = new EventTrigger.Entry();
@@ -89,7 +89,7 @@ public class InputHandler : MonoBehaviour
         var triggerHabilidad = this.habilidad.AddComponent<EventTrigger>();
         var habilidadDown = new EventTrigger.Entry();
         habilidadDown.eventID = EventTriggerType.PointerDown;
-        habilidadDown.callback.AddListener((e) => Habilidad());
+        habilidadDown.callback.AddListener((e) => GetComponent<GuerreroController>().Habilidad());
         triggerHabilidad.triggers.Add(habilidadDown);
 
         var habilidadUp = new EventTrigger.Entry();

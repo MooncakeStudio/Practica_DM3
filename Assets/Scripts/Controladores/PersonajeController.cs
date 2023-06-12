@@ -7,6 +7,10 @@ public class PersonajeController : MonoBehaviour
 {
     protected Personaje personaje;
 
+    [Header("CD")]
+    [SerializeField] protected bool cdBasico = true;
+    [SerializeField] protected bool cdEspecial = true;
+
     public delegate void MuertoEvent();
     public static event MuertoEvent Muerto;
     public void Awake()
