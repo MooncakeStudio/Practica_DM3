@@ -73,7 +73,8 @@ public class GameManager : MonoBehaviour
 
     public void PasarRonda() 
     { 
-        ronda++; 
+        ronda++;
+        GameObject.Find("Canvas").transform.Find("HUD").transform.Find("RondasNum").GetComponent<TextMeshProUGUI>().text = "Ronda: " + ronda;
         //enemigosGenerar = enemigosGenerar + (int)Random.Range(1, 4);
         
         for(int i = 1; i < 4; i++)
@@ -104,7 +105,7 @@ public class GameManager : MonoBehaviour
 
     public void FinPartida()
     {
-        DataHandler.instance.Guardar();
+        //DataHandler.instance.Guardar();
         ronda = 1;
         tiempo = 0;
         enemigosGenerar = 6;
@@ -146,7 +147,7 @@ public class GameManager : MonoBehaviour
         habilidad.gameObject.SetActive(true);
         perdida.gameObject.SetActive(false);
 
-        SceneManager.LoadScene("MenuPPal_Actualizado_ArregloInterfaz");
+        resetGame();
     }
     public void resetGame()
     {
