@@ -134,6 +134,16 @@ public class GameManager : MonoBehaviour
 
         SceneManager.LoadScene("MenuPPal_Actualizado_ArregloInterfaz");
     }
+    public void resetGame()
+    {
+        DataHandler.instance.Guardar();
+        ronda = 1;
+        tiempo = 0;
+        enemigosGenerar = 5;
+        enemigosTotales = 0;
+        enemigosGenerados = 0;
+        SceneManager.LoadScene("MenuPPal_Actualizado_ArregloInterfaz");
+    }
 
     public IEnumerator playOnce(AudioClip clip)
     {
