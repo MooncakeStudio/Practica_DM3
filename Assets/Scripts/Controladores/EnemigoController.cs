@@ -59,6 +59,7 @@ public class EnemigoController : MonoBehaviour
 
         if(personaje.GetVida() <= 0)
         {
+            GameManager.instance.EnemigoDerrotado();
             Destroy(gameObject);
         }
     }
@@ -92,10 +93,10 @@ public class EnemigoController : MonoBehaviour
         GetComponent<Animator>().SetTrigger("Especial");
     }
 
-    private void OnDestroy()
+    /*private void OnDestroy()
     {
         GameManager.instance.EnemigoDerrotado();
-    }
+    }*/
 
     private void OnTriggerEnter(Collider other)
     {
@@ -137,6 +138,7 @@ public class EnemigoController : MonoBehaviour
 
     IEnumerator rutinaAtaque(GameObject other)
     {
+        yield return new WaitForSeconds(0.5f);
         Debug.Log("Empezamos la rutina");
         if (EspecialCargado)
         {

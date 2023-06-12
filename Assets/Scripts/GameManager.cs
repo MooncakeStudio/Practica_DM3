@@ -73,7 +73,8 @@ public class GameManager : MonoBehaviour
 
     public void PasarRonda() 
     { 
-        ronda++; 
+        ronda++;
+        GameObject.Find("Canvas").transform.Find("HUD").transform.Find("RondasNum").GetComponent<TextMeshProUGUI>().text = "Ronda: " + ronda;
         //enemigosGenerar = enemigosGenerar + (int)Random.Range(1, 4);
         
         for(int i = 1; i < 4; i++)
@@ -83,6 +84,8 @@ public class GameManager : MonoBehaviour
             spawners.GetComponent<SpawnerManager>().AumentarEnemigosGenerar(nuevosEnemigos);
             enemigosGenerar += nuevosEnemigos;
         }
+
+        GameObject.FindObjectOfType<PersonajeController>().PasaRonda();
         enemigosDerrotados = 0; 
         enemigosGenerados = 0; 
     }
@@ -104,7 +107,7 @@ public class GameManager : MonoBehaviour
 
     public void FinPartida()
     {
-        DataHandler.instance.Guardar();
+        //DataHandler.instance.Guardar();
         ronda = 1;
         tiempo = 0;
         enemigosGenerar = 6;
@@ -141,12 +144,14 @@ public class GameManager : MonoBehaviour
         //habilidad.GetComponent<Button>().interactable = true;
         //perdida.gameObject.SetActive(false);
 
-        joystick.gameObject.SetActive(true);
-        ataque.gameObject.SetActive(true);
-        habilidad.gameObject.SetActive(true);
-        perdida.gameObject.SetActive(false);
+        if(joystick != null) joystick.gameObject.SetActive(true);
+        if (ataque != null) ataque.gameObject.SetActive(true);
+        if (habilidad != null) habilidad.gameObject.SetActive(true);
+        if (perdida != null) perdida.gameObject.SetActive(false);
 
-        SceneManager.LoadScene("MenuPPal_Actualizado_ArregloInterfaz");
+        yield return new WaitForSeconds(0.2f);
+
+        resetGame();
     }
     public void resetGame()
     {
