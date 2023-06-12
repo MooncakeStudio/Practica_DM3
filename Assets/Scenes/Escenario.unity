@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2229,6 +2229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ce9dd2c63c85c94ea39f2933558fb68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mostrarPuntuaciones: {fileID: 0}
 --- !u!114 &1012465138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2241,9 +2242,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5016dc78a866d246ac043440c32f0ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mostrarPuntuaciones: {fileID: 584110528}
   enemigosDerrotados: 0
   ronda: 0
+  enemigosTotales: 0
 --- !u!4 &1012465139
 Transform:
   m_ObjectHideFlags: 0
