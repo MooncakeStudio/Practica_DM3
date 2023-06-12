@@ -16,7 +16,7 @@ public class EnemigoController : MonoBehaviour
 
     private void Start()
     {
-        personaje = new Guerrero();
+        personaje = new Guerrero("",40,10,5);
         rb = GetComponent<Rigidbody>();
         objetivo = FindObjectOfType<PersonajeController>();
         var posicionPersonaje = objetivo.gameObject.transform.position;
@@ -76,7 +76,7 @@ public class EnemigoController : MonoBehaviour
 
     public int Getataque()
     {
-        return personaje.GetAtaque()-10;
+        return personaje.GetAtaque()-5;
     }
 
     public void Atacar()
@@ -102,7 +102,7 @@ public class EnemigoController : MonoBehaviour
         if (other.CompareTag("EspecialMago"))
         {
             Debug.Log("Me atacan");
-            personaje.herida(other.gameObject.GetComponentInParent<MagoController>().GetAtaque()*3/5);
+            personaje.herida(other.gameObject.GetComponentInParent<MagoController>().GetAtaque()*3);
         }
         // else if (other.CompareTag("BasicoMago"))
         // {

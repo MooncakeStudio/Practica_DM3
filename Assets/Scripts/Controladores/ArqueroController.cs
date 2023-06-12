@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -73,7 +74,7 @@ public class ArqueroController : PersonajeController
             var ataque = Instantiate(basiquito);
             ataque.transform.position = spawnPoints[i].transform.position + (transform.forward);
             ataque.transform.eulerAngles = new Vector3(90, transform.rotation.eulerAngles.y, 0);
-            ataque.GetComponent<FlechaArquero>().SetAtaque(personaje.GetAtaque());
+            ataque.GetComponent<FlechaArquero>().SetAtaque((int)Math.Ceiling(personaje.GetAtaque()*1.5));
             ataque.GetComponent<Rigidbody>().velocity = transform.forward * 15;
         }
         yield return new WaitForSeconds(0.01f);
@@ -89,7 +90,7 @@ public class ArqueroController : PersonajeController
     IEnumerator cooldownEspecial(){
         cdEspecial = false;
         botonEspecial.GetComponent<Image>().color = new Color(0.4f,0.4f,0.4f,0.5f);
-        yield return new WaitForSeconds(7);
+        yield return new WaitForSeconds(8);
         botonEspecial.GetComponent<Image>().color = new Color(1.0f,1.0f,1.0f,1.0f);
         cdEspecial = true;
     }
