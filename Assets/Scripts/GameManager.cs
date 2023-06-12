@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -103,12 +104,22 @@ public class GameManager : MonoBehaviour
     public IEnumerator MostrarFin()
     {
         var canvas = GameObject.Find("Canvas");
-        var perdida = canvas.transform.Find("Perdida");
 
+        var perdida = canvas.transform.Find("Perdida");
+        var joystick = canvas.transform.Find("Fixed Joystick").gameObject;
+        var ataque = canvas.transform.Find("Botones Acciones/Ataque").gameObject;
+        var habilidad = canvas.transform.Find("Botones Acciones/Habilidad").gameObject;
+
+        joystick.GetComponent<FixedJoystick>().enabled = false;
+        ataque.GetComponent<Button>().interactable = false;
+        habilidad.GetComponent<Button>().interactable = false;
         perdida.gameObject.SetActive(true);
 
         yield return new WaitForSeconds(2);
 
+        joystick.GetComponent<FixedJoystick>().enabled = true;
+        ataque.GetComponent<Button>().interactable = true;
+        habilidad.GetComponent<Button>().interactable = true;
         perdida.gameObject.SetActive(false);
 
         SceneManager.LoadScene("MenuPPal_Actualizado");
