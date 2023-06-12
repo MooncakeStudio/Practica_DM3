@@ -8,9 +8,6 @@ public class ArqueroController : PersonajeController
     [Header("Prefab flecha")]
     [SerializeField] private GameObject basiquito;
     [SerializeField] private List<GameObject> spawnPoints;
-    [Header("CD")]
-    [SerializeField] private bool cdBasico = true;
-    [SerializeField] private bool cdEspecial = true;
     [Header("Botones")]
     private Button botonBasico;
     private Button botonEspecial;

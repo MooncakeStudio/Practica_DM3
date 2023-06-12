@@ -1,13 +1,15 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 //using UnityEditor.Animations;
 using UnityEngine;
 
 public class PersonajeController : MonoBehaviour
 {
     protected Personaje personaje;
+
+    [Header("CD")]
+    [SerializeField] protected bool cdBasico = true;
+    [SerializeField] protected bool cdEspecial = true;
 
     public delegate void MuertoEvent();
     public static event MuertoEvent Muerto;
@@ -25,9 +27,9 @@ public class PersonajeController : MonoBehaviour
 
     public void TakeDamage(int d)
     {
-        Debug.Log("Personaje recibe daño");
-        Debug.Log(personaje.GetVida());
+        Debug.Log("Personaje recibe daï¿½o");
         personaje.herida(d);
+        GetComponent<VidaController>().actualizarVida(personaje.GetVida());
         if (personaje.GetVida() <= 0)
         {
             Muerto?.Invoke();

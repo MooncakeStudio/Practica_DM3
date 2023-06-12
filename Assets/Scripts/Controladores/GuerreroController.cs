@@ -13,6 +13,7 @@ public class GuerreroController : PersonajeController
     {
         personaje = new Guerrero();
     }
+
     private void Start()
     {
         botonBasico = GetComponent<InputHandler>().ataque;
@@ -27,17 +28,46 @@ public class GuerreroController : PersonajeController
 
     public void Atacar()
     {
-        this.personaje.RealizarAtaque();
-        GetComponent<Animator>().SetTrigger("Atacar");
+        if (cdBasico)
+        {
+            this.personaje.RealizarAtaque();
+            GetComponent<Animator>().SetTrigger("Atacar");
+            StartCoroutine(cooldownBasico());
+        }
     }
 
-    new public void AtacarEspecial()
+    public void Habilidad()
     {
-        Debug.Log("Ataque mago");
-        personaje.RealizarAtaqueEspecial();
+        if (cdEspecial)
+        {
+            Debug.Log("Ataque mago");
+            personaje.RealizarAtaqueEspecial();
 
-        GetComponent<Animator>().SetTrigger("Especial");
+            GetComponent<Animator>().SetTrigger("Especial");
+            StartCoroutine(cooldownEspecial());
+        }
     }
 
-    public int GetAtaque() { return personaje.GetAtaque(); }
+    public int GetAtaque()
+    {
+        return personaje.GetAtaque();
+    }
+
+    IEnumerator cooldownBasico()
+    {
+        cdBasico = false;
+        botonBasico.GetComponent<Image>().color = new Color(0.4f, 0.4f, 0.4f, 0.5f);
+        yield return new WaitForSeconds(1);
+        botonBasico.GetComponent<Image>().color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
+        cdBasico = true;
+    }
+
+    IEnumerator cooldownEspecial()
+    {
+        cdEspecial = false;
+        botonEspecial.GetComponent<Image>().color = new Color(0.4f, 0.4f, 0.4f, 0.5f);
+        yield return new WaitForSeconds(7);
+        botonEspecial.GetComponent<Image>().color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
+        cdEspecial = true;
+    }
 }
