@@ -20,6 +20,7 @@ namespace Assets.Scripts
 
         public void SalirJuego()
         {
+            Time.timeScale = 1;
             GameManager.instance.resetGame();
         }
        
