@@ -141,10 +141,12 @@ public class GameManager : MonoBehaviour
         //habilidad.GetComponent<Button>().interactable = true;
         //perdida.gameObject.SetActive(false);
 
-        joystick.gameObject.SetActive(true);
-        ataque.gameObject.SetActive(true);
-        habilidad.gameObject.SetActive(true);
-        perdida.gameObject.SetActive(false);
+        if(joystick != null) joystick.gameObject.SetActive(true);
+        if (ataque != null) ataque.gameObject.SetActive(true);
+        if (habilidad != null) habilidad.gameObject.SetActive(true);
+        if (perdida != null) perdida.gameObject.SetActive(false);
+
+        yield return new WaitForSeconds(0.2f);
 
         SceneManager.LoadScene("MenuPPal_Actualizado_ArregloInterfaz");
     }

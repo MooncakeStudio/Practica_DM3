@@ -75,11 +75,6 @@ public class DataHandler : MonoBehaviour
 
         string puntuacionesJson = JsonUtility.ToJson(scl);
 
-        foreach(var s in scl.list)
-        {
-            Debug.Log(s);
-        }
-
         File.WriteAllText(path, puntuacionesJson);
     }
 
