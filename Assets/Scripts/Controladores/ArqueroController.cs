@@ -62,7 +62,7 @@ public class ArqueroController : PersonajeController
         ataque.transform.position = spawnPoints[0].transform.position + transform.forward;
         ataque.transform.eulerAngles = new Vector3(90, transform.rotation.eulerAngles.y, 0);
         ataque.GetComponent<FlechaArquero>().SetAtaque(personaje.GetAtaque());
-        ataque.GetComponent<Rigidbody>().velocity = transform.forward*15;
+        ataque.GetComponent<Rigidbody>().velocity = transform.forward*40;
         yield return new WaitForSeconds(0.01f);
     }
 
@@ -74,14 +74,14 @@ public class ArqueroController : PersonajeController
             ataque.transform.position = spawnPoints[i].transform.position + (transform.forward);
             ataque.transform.eulerAngles = new Vector3(90, transform.rotation.eulerAngles.y, 0);
             ataque.GetComponent<FlechaArquero>().SetAtaque(personaje.GetAtaque());
-            ataque.GetComponent<Rigidbody>().velocity = transform.forward * 15;
+            ataque.GetComponent<Rigidbody>().velocity = transform.forward * 40;
         }
         yield return new WaitForSeconds(0.01f);
     }
     IEnumerator cooldownBasico(){
         cdBasico = false;
         botonBasico.GetComponent<Image>().color = new Color(0.4f,0.4f,0.4f,0.5f);
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.75f);
         botonBasico.GetComponent<Image>().color = new Color(1.0f,1.0f,1.0f,1.0f);
         cdBasico = true;
     }
