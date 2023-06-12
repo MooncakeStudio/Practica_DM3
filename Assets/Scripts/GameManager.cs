@@ -95,6 +95,22 @@ public class GameManager : MonoBehaviour
         enemigosGenerar = 5;
         enemigosTotales = 0;
         enemigosGenerados = 0;
+
+
+        StartCoroutine(MostrarFin());
+    }
+
+    public IEnumerator MostrarFin()
+    {
+        var canvas = GameObject.Find("Canvas");
+        var perdida = canvas.transform.Find("Perdida");
+
+        perdida.gameObject.SetActive(true);
+
+        yield return new WaitForSeconds(2);
+
+        perdida.gameObject.SetActive(false);
+
         SceneManager.LoadScene("MenuPPal_Actualizado");
     }
 

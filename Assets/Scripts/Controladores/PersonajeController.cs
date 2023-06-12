@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 //using UnityEditor.Animations;
 using UnityEngine;
 
@@ -24,6 +26,7 @@ public class PersonajeController : MonoBehaviour
     public void TakeDamage(int d)
     {
         Debug.Log("Personaje recibe daño");
+        Debug.Log(personaje.GetVida());
         personaje.herida(d);
         if (personaje.GetVida() <= 0)
         {
