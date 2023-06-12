@@ -103,26 +103,36 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator MostrarFin()
     {
-        var canvas = GameObject.Find("Canvas");
+        var canvas = GameObject.Find("Canvas").transform;
 
-        var perdida = canvas.transform.Find("Perdida");
-        var joystick = canvas.transform.Find("Fixed Joystick").gameObject;
-        var ataque = canvas.transform.Find("Botones Acciones/Ataque").gameObject;
-        var habilidad = canvas.transform.Find("Botones Acciones/Habilidad").gameObject;
+        var perdida = canvas.Find("Perdida");
+        var joystick = canvas.Find("Botones/Fixed Joystick").gameObject;
+        var ataque = canvas.Find("Botones/Botones Acciones/Ataque").gameObject;
+        var habilidad = canvas.Find("Botones/Botones Acciones/Habilidad").gameObject;
 
-        joystick.GetComponent<FixedJoystick>().enabled = false;
-        ataque.GetComponent<Button>().interactable = false;
-        habilidad.GetComponent<Button>().interactable = false;
+        //joystick.GetComponent<FixedJoystick>().enabled = false;
+        //ataque.GetComponent<Button>().interactable = false;
+        //habilidad.GetComponent<Button>().interactable = false;
+        //perdida.gameObject.SetActive(true);
+
+        joystick.gameObject.SetActive(false);
+        ataque.gameObject.SetActive(false);
+        habilidad.gameObject.SetActive(false);
         perdida.gameObject.SetActive(true);
 
         yield return new WaitForSeconds(2);
 
-        joystick.GetComponent<FixedJoystick>().enabled = true;
-        ataque.GetComponent<Button>().interactable = true;
-        habilidad.GetComponent<Button>().interactable = true;
+        //joystick.GetComponent<FixedJoystick>().enabled = true;
+        //ataque.GetComponent<Button>().interactable = true;
+        //habilidad.GetComponent<Button>().interactable = true;
+        //perdida.gameObject.SetActive(false);
+
+        joystick.gameObject.SetActive(true);
+        ataque.gameObject.SetActive(true);
+        habilidad.gameObject.SetActive(true);
         perdida.gameObject.SetActive(false);
 
-        SceneManager.LoadScene("MenuPPal_Actualizado");
+        SceneManager.LoadScene("MenuPPal_Actualizado_ArregloInterfaz");
     }
 
     public IEnumerator playOnce(AudioClip clip)
