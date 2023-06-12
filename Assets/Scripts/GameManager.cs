@@ -123,6 +123,7 @@ public class GameManager : MonoBehaviour
         var canvas = GameObject.Find("Canvas").transform;
 
         var perdida = canvas.Find("Perdida");
+        var bloqueo = canvas.Find("Bloqueo");
         var joystick = canvas.Find("Botones/Fixed Joystick").gameObject;
         var ataque = canvas.Find("Botones/Botones Acciones/Ataque").gameObject;
         var habilidad = canvas.Find("Botones/Botones Acciones/Habilidad").gameObject;
@@ -136,6 +137,7 @@ public class GameManager : MonoBehaviour
         ataque.gameObject.SetActive(false);
         habilidad.gameObject.SetActive(false);
         perdida.gameObject.SetActive(true);
+        bloqueo.gameObject.SetActive(true);
 
         yield return new WaitForSeconds(2);
 
@@ -148,6 +150,7 @@ public class GameManager : MonoBehaviour
         if (ataque != null) ataque.gameObject.SetActive(true);
         if (habilidad != null) habilidad.gameObject.SetActive(true);
         if (perdida != null) perdida.gameObject.SetActive(false);
+        if (bloqueo != null) bloqueo.gameObject.SetActive(false);
 
         yield return new WaitForSeconds(0.2f);
 
