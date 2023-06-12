@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.574817, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1776,6 +1776,10 @@ MonoBehaviour:
 
     https://assetstore.unity.com/packages/tools/input-management/joystick-pack-107631
 
+    https://pixabay.com/music/beautiful-plays-please-calm-my-mind-125566/
+
+    https://mixkit.co/free-sound-effects/
+
 '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ffb4fc66b7916de44bfcd26871141eeb, type: 2}
@@ -1803,8 +1807,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35
-  m_fontSizeBase: 35
+  m_fontSize: 25
+  m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
