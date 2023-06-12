@@ -7,6 +7,7 @@ using System.IO;
 using System.Runtime.Serialization.Json;
 using System.Linq;
 using TMPro;
+using Unity.VisualScripting.Dependencies.Sqlite;
 
 public class DataHandler : MonoBehaviour
 {
@@ -94,7 +95,8 @@ public class DataHandler : MonoBehaviour
 
             var texto = mostrarPuntuaciones.transform.Find("Modal/ListaHS/Container/Texto").GetComponent<TextMeshProUGUI>();
 
-            for(int i = 0; i < 10; i++)
+            var maximo = scl.list.Count < 10 ? scl.list.Count : 10;
+            for(int i = 0; i < maximo; i++)
             {
                 float minutos = Mathf.FloorToInt(scl.list[i].tiempo / 60);
                 float segundos = Mathf.FloorToInt(scl.list[i].tiempo % 60);
