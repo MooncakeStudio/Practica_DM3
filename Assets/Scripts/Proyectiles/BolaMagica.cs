@@ -10,9 +10,14 @@ public class BolaMagica : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Enemigo"))
+        Destroy(gameObject);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Enemigo"))
         {
-            collision.gameObject.GetComponent<EnemigoController>().TakeDamage(ataque);
+            other.GetComponent<EnemigoController>().TakeDamage(ataque);
         }
 
         Destroy(gameObject);
