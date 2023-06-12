@@ -66,7 +66,7 @@ public class GuerreroController : PersonajeController
     {
         cdEspecial = false;
         botonEspecial.GetComponent<Image>().color = new Color(0.4f, 0.4f, 0.4f, 0.5f);
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(7);
         botonEspecial.GetComponent<Image>().color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
         cdEspecial = true;
     }

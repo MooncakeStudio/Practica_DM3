@@ -16,7 +16,7 @@ public class EnemigoController : MonoBehaviour
 
     private void Start()
     {
-        personaje = new Guerrero("",40,10,5);
+        personaje = new Guerrero();
         rb = GetComponent<Rigidbody>();
         objetivo = FindObjectOfType<PersonajeController>();
         var posicionPersonaje = objetivo.gameObject.transform.position;
@@ -59,7 +59,6 @@ public class EnemigoController : MonoBehaviour
 
         if(personaje.GetVida() <= 0)
         {
-            GameManager.instance.EnemigoDerrotado();
             Destroy(gameObject);
         }
     }
@@ -77,7 +76,7 @@ public class EnemigoController : MonoBehaviour
 
     public int Getataque()
     {
-        return personaje.GetAtaque()-5;
+        return personaje.GetAtaque();
     }
 
     public void Atacar()
@@ -93,17 +92,17 @@ public class EnemigoController : MonoBehaviour
         GetComponent<Animator>().SetTrigger("Especial");
     }
 
-    /*private void OnDestroy()
+    private void OnDestroy()
     {
         GameManager.instance.EnemigoDerrotado();
-    }*/
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("EspecialMago"))
         {
             Debug.Log("Me atacan");
-            personaje.herida(other.gameObject.GetComponentInParent<MagoController>().GetAtaque()*3);
+            personaje.herida(other.gameObject.GetComponentInParent<MagoController>().GetAtaque()*3/5);
         }
         // else if (other.CompareTag("BasicoMago"))
         // {
@@ -138,7 +137,6 @@ public class EnemigoController : MonoBehaviour
 
     IEnumerator rutinaAtaque(GameObject other)
     {
-        yield return new WaitForSeconds(0.5f);
         Debug.Log("Empezamos la rutina");
         if (EspecialCargado)
         {

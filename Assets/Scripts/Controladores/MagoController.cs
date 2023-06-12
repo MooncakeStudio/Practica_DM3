@@ -45,16 +45,13 @@ public class MagoController : PersonajeController
     new public void AtacarEspecial() 
     {
         if(cdEspecial){
-            this.personaje.SetAtaque(this.personaje.GetAtaque()*3);
-            Debug.Log("Ataque mago" + this.personaje.GetAtaque());
+            Debug.Log("Ataque mago");
             personaje.RealizarAtaqueEspecial();
             fueguito.enabled= true;
             fuego.Play();
             humo.Play();
             GetComponent<Animator>().SetTrigger("Especial");
-            this.personaje.SetAtaque(this.personaje.GetAtaque()/3);
             StartCoroutine(cooldownEspecial());
-            
         }
         
     }
@@ -89,7 +86,7 @@ public class MagoController : PersonajeController
     IEnumerator cooldownEspecial(){
         cdEspecial = false;
         botonEspecial.GetComponent<Image>().color = new Color(0.4f,0.4f,0.4f,0.5f);
-        yield return new WaitForSeconds(12);
+        yield return new WaitForSeconds(7);
         botonEspecial.GetComponent<Image>().color = new Color(1.0f,1.0f,1.0f,1.0f);
         cdEspecial = true;
     }
