@@ -15,7 +15,7 @@ public class DataHandler : MonoBehaviour
     string path;
 
     SerializableScoreList scl;
-    [SerializeField] TextMeshProUGUI mostrarPuntuaciones;
+    [SerializeField] GameObject mostrarPuntuaciones;
 
     public static DataHandler instance;
     // METODOS
@@ -71,7 +71,7 @@ public class DataHandler : MonoBehaviour
 
         scl.list.Add(sc);
 
-        scl.list = scl.list.OrderByDescending(x => x.ronda).ThenByDescending(x => x.tiempo).ToList();
+        scl.list = scl.list.OrderByDescending(x => x.enemigosDerrotados).ThenByDescending(x => x.ronda).ThenByDescending(x=>x.tiempo).ToList();
 
         string puntuacionesJson = JsonUtility.ToJson(scl);
 
@@ -92,14 +92,13 @@ public class DataHandler : MonoBehaviour
 
             SerializableScoreList scl = gameObject.GetComponent<DataHandler>().CargarPuntuaciones();
 
-            var texto = mostrarPuntuaciones.GetComponent<TextMeshProUGUI>();
+            var texto = mostrarPuntuaciones.transform.Find("Modal/ListaHS/Container/Texto").GetComponent<TextMeshProUGUI>();
 
-            foreach (SerializableScore sc in scl.list)
+            for(int i = 0; i < 10; i++)
             {
-                float minutos = Mathf.FloorToInt(sc.tiempo / 60);
-                float segundos = Mathf.FloorToInt(sc.tiempo % 60);
-
-                texto.text += sc.ronda + "\t \t \t" + string.Format("{0:0}:{1:00}", minutos, segundos) + "\n";
+                float minutos = Mathf.FloorToInt(scl.list[i].tiempo / 60);
+                float segundos = Mathf.FloorToInt(scl.list[i].tiempo % 60);
+                texto.text += scl.list[i].enemigosDerrotados + "\t\t" + scl.list[i].ronda + "\t\t" + string.Format("{0:0}:{1:00}", minutos, segundos) + "\n";
             }
         }
     }
