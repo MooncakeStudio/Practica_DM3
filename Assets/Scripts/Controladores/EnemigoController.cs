@@ -12,6 +12,8 @@ public class EnemigoController : MonoBehaviour
 
     private bool EspecialCargado = true;
 
+    private List<Coroutine> corutinasAtaque = new List<Coroutine>();
+
     private void Start()
     {
         personaje = new Guerrero();
@@ -117,7 +119,8 @@ public class EnemigoController : MonoBehaviour
         if (other.CompareTag("PersonajeObjetivo"))
         {
             Debug.Log("ataco");
-            StartCoroutine(rutinaAtaque(other.gameObject));
+            corutinasAtaque.Add(StartCoroutine(rutinaAtaque(other.gameObject)));
+            
         }
     }
 
@@ -125,7 +128,10 @@ public class EnemigoController : MonoBehaviour
     {
         if (other.CompareTag("PersonajeObjetivo"))
         {
-            StopCoroutine("rutinaAtaque");
+            Debug.Log("Personaje alejado");
+
+            foreach(var corutina in corutinasAtaque)
+                StopCoroutine(corutina);
         }
     }
 
@@ -155,7 +161,7 @@ public class EnemigoController : MonoBehaviour
             other.GetComponentInParent<GuerreroController>().TakeDamage(this.Getataque());
         }
         yield return new WaitForSeconds(1);
-        StartCoroutine(rutinaAtaque(other));
+        corutinasAtaque.Add(StartCoroutine(rutinaAtaque(other)));
     }
 
     IEnumerator cooldownEspecial()

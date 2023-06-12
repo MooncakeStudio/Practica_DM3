@@ -23,7 +23,6 @@ public class DataHandler : MonoBehaviour
 
     public void Awake()
     {
-
         if (FindObjectsOfType(GetType()).Length > 1)
         {
             Destroy(gameObject);
