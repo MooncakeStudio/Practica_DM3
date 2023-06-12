@@ -30,6 +30,7 @@ public class VidaController : MonoBehaviour
     public void actualizarVida(int vidaNueva){
         vida = vidaNueva;
         vida = Mathf.Clamp (vida, 0 ,vidaMax);
+        Debug.Log("La vida se actualiza");
     }
 
     public void Componentes(TextMeshProUGUI vidaNumero, Image bVida)
