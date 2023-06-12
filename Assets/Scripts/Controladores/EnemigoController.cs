@@ -76,7 +76,7 @@ public class EnemigoController : MonoBehaviour
 
     public int Getataque()
     {
-        return personaje.GetAtaque();
+        return personaje.GetAtaque()-10;
     }
 
     public void Atacar()
