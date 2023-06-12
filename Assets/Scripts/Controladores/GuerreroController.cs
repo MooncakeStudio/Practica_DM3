@@ -9,13 +9,6 @@ public class GuerreroController : PersonajeController
     private Button botonBasico;
     private Button botonEspecial;
 
-    [Header("CD")]
-    [SerializeField]
-    private bool cdBasico = true;
-
-    [SerializeField]
-    private bool cdEspecial = true;
-
     private void Awake()
     {
         personaje = new Guerrero();
@@ -43,7 +36,7 @@ public class GuerreroController : PersonajeController
         }
     }
 
-    new public void AtacarEspecial()
+    public void Habilidad()
     {
         if (cdEspecial)
         {
@@ -60,19 +53,21 @@ public class GuerreroController : PersonajeController
         return personaje.GetAtaque();
     }
 
-    IEnumerator cooldownBasico(){
+    IEnumerator cooldownBasico()
+    {
         cdBasico = false;
-        botonBasico.GetComponent<Image>().color = new Color(0.4f,0.4f,0.4f,0.5f);
+        botonBasico.GetComponent<Image>().color = new Color(0.4f, 0.4f, 0.4f, 0.5f);
         yield return new WaitForSeconds(1);
-        botonBasico.GetComponent<Image>().color = new Color(1.0f,1.0f,1.0f,1.0f);
+        botonBasico.GetComponent<Image>().color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
         cdBasico = true;
     }
 
-    IEnumerator cooldownEspecial(){
+    IEnumerator cooldownEspecial()
+    {
         cdEspecial = false;
-        botonEspecial.GetComponent<Image>().color = new Color(0.4f,0.4f,0.4f,0.5f);
+        botonEspecial.GetComponent<Image>().color = new Color(0.4f, 0.4f, 0.4f, 0.5f);
         yield return new WaitForSeconds(7);
-        botonEspecial.GetComponent<Image>().color = new Color(1.0f,1.0f,1.0f,1.0f);
+        botonEspecial.GetComponent<Image>().color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
         cdEspecial = true;
     }
 }

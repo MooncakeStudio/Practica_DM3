@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -49,7 +50,7 @@ public class GameManager : MonoBehaviour
 
         tiempo = 0;
         ronda = 1;
-        enemigosGenerar = 5;
+        enemigosGenerar = 6;
 
         asrc.volume = 1;
     }
@@ -70,7 +71,21 @@ public class GameManager : MonoBehaviour
 
     
 
-    public void PasarRonda() { ronda++; enemigosGenerar = enemigosGenerar + (int)Random.Range(1, 4); enemigosDerrotados = 0; enemigosGenerados = 0; }
+    public void PasarRonda() 
+    { 
+        ronda++; 
+        //enemigosGenerar = enemigosGenerar + (int)Random.Range(1, 4);
+        
+        for(int i = 1; i < 4; i++)
+        {
+            var nuevosEnemigos = (int)Random.Range(0,2);
+            var spawners = GameObject.Find("SP" + i);
+            spawners.GetComponent<SpawnerManager>().AumentarEnemigosGenerar(nuevosEnemigos);
+            enemigosGenerar += nuevosEnemigos;
+        }
+        enemigosDerrotados = 0; 
+        enemigosGenerados = 0; 
+    }
     public void NuevoEnemgio() { enemigosGenerados++; }
     public void EnemigoDerrotado() { enemigosDerrotados++; enemigosTotales++; }
     public int GetEnemigosGenerados() { return enemigosGenerados; }
@@ -92,10 +107,56 @@ public class GameManager : MonoBehaviour
         DataHandler.instance.Guardar();
         ronda = 1;
         tiempo = 0;
+        enemigosGenerar = 6;
+        enemigosTotales = 0;
+        enemigosGenerados = 0;
+
+
+        StartCoroutine(MostrarFin());
+    }
+
+    public IEnumerator MostrarFin()
+    {
+        var canvas = GameObject.Find("Canvas").transform;
+
+        var perdida = canvas.Find("Perdida");
+        var joystick = canvas.Find("Botones/Fixed Joystick").gameObject;
+        var ataque = canvas.Find("Botones/Botones Acciones/Ataque").gameObject;
+        var habilidad = canvas.Find("Botones/Botones Acciones/Habilidad").gameObject;
+
+        //joystick.GetComponent<FixedJoystick>().enabled = false;
+        //ataque.GetComponent<Button>().interactable = false;
+        //habilidad.GetComponent<Button>().interactable = false;
+        //perdida.gameObject.SetActive(true);
+
+        joystick.gameObject.SetActive(false);
+        ataque.gameObject.SetActive(false);
+        habilidad.gameObject.SetActive(false);
+        perdida.gameObject.SetActive(true);
+
+        yield return new WaitForSeconds(2);
+
+        //joystick.GetComponent<FixedJoystick>().enabled = true;
+        //ataque.GetComponent<Button>().interactable = true;
+        //habilidad.GetComponent<Button>().interactable = true;
+        //perdida.gameObject.SetActive(false);
+
+        joystick.gameObject.SetActive(true);
+        ataque.gameObject.SetActive(true);
+        habilidad.gameObject.SetActive(true);
+        perdida.gameObject.SetActive(false);
+
+        SceneManager.LoadScene("MenuPPal_Actualizado_ArregloInterfaz");
+    }
+    public void resetGame()
+    {
+        DataHandler.instance.Guardar();
+        ronda = 1;
+        tiempo = 0;
         enemigosGenerar = 5;
         enemigosTotales = 0;
         enemigosGenerados = 0;
-        SceneManager.LoadScene("MenuPPal_Actualizado");
+        SceneManager.LoadScene("MenuPPal_Actualizado_ArregloInterfaz");
     }
 
     public IEnumerator playOnce(AudioClip clip)

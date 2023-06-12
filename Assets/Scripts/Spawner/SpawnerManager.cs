@@ -10,28 +10,38 @@ public class SpawnerManager : MonoBehaviour
     [Header("Prefab enemigo")]
     [SerializeField] private GameObject prefabEnemigo;
 
+    [SerializeField] List<int> posicionesZ;
+
+    private int enemigosAGenerar = 2;
+    [SerializeField] private int enemigosGenerados = 0;
+
+    private bool deberiaGenerar = true;
+
 
     // Update is called once per frame
     void Update()
     {
-        if (GameManager.instance.DeberiaGenerarEnemgios())
+        if (deberiaGenerar)
         {
-            GameManager.instance.EmpezadaRonda();
+            deberiaGenerar = false;
             StartCoroutine(generarEnemigos());
         }
+        
     }
 
     IEnumerator generarEnemigos()
     {
-        while(GameManager.instance.GetEnemigosGenerados() < GameManager.instance.GetEnemigosGenerar())
+        while (enemigosGenerados < enemigosAGenerar)
         {
             var tiempo = Random.Range(1.0f, 3.0f);
             yield return new WaitForSeconds(tiempo);
+            enemigosGenerados++;
             GameManager.instance.NuevoEnemgio();
             Instantiate(prefabEnemigo,posicionPunto(),Quaternion.identity);
-            
         }
     }
+
+    public void AumentarEnemigosGenerar(int aumento) { enemigosAGenerar += aumento; deberiaGenerar = true; enemigosGenerados = 0; }
 
     private Vector3 posicionPunto()
     {
@@ -40,16 +50,17 @@ public class SpawnerManager : MonoBehaviour
         //f�rmula circunferencia conociendo centro y radio
         // (x -xc)^2 + (y+yc)^2 = r^2, siendo xc e yc los puntos del centro. El centro est� en (0,0) y el radio es 105.
         int xPos = Random.Range(-35, 0);
-        
+
         //xPos = (int)Mathf.Pow(xPos, factoNegativo);
 
-        float posX = Mathf.Pow(xPos, 2);
+        /*float posX = Mathf.Pow(xPos, 2);
         float posZCuadrado = Mathf.Pow(radius, 2) - posX;
         if (posZCuadrado < 0) posZCuadrado = -posZCuadrado;
         float posZ = Mathf.Sqrt(posZCuadrado);
         int factoNegativo = Random.Range(1, 3);
         if (factoNegativo == 1)
-            posZ = -posZ;
+            posZ = -posZ;*/
+        int posZ = Random.Range(posicionesZ[0], posicionesZ[1]);
 
         posicion = new Vector3(xPos, 15.04f, posZ);
         return posicion;
