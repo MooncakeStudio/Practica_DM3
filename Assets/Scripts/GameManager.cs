@@ -83,6 +83,8 @@ public class GameManager : MonoBehaviour
             spawners.GetComponent<SpawnerManager>().AumentarEnemigosGenerar(nuevosEnemigos);
             enemigosGenerar += nuevosEnemigos;
         }
+
+        GameObject.FindObjectOfType<PersonajeController>().PasaRonda();
         enemigosDerrotados = 0; 
         enemigosGenerados = 0; 
     }

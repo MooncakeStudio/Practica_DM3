@@ -50,11 +50,23 @@ public class PersonajeController : MonoBehaviour
 
     public int VidaTotal()
     {
+        return this.personaje.GetVidaMax();
+    }
+
+    public int Vida()
+    {
         return this.personaje.GetVida();
     }
 
     public void SetPersonaje(Personaje personaje)
     {
         this.personaje = personaje;
+    }
+
+    public void PasaRonda()
+    {
+        this.personaje.herida(-10);
+        this.personaje.AumentarVidaMax(5);
+        GetComponent<VidaController>().ActualizarVidaMax();
     }
 }

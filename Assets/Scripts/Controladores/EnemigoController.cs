@@ -138,6 +138,7 @@ public class EnemigoController : MonoBehaviour
 
     IEnumerator rutinaAtaque(GameObject other)
     {
+        yield return new WaitForSeconds(0.5f);
         Debug.Log("Empezamos la rutina");
         if (EspecialCargado)
         {

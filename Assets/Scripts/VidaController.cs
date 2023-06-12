@@ -32,6 +32,11 @@ public class VidaController : MonoBehaviour
         vida = Mathf.Clamp (vida, 0 ,vidaMax);
     }
 
+    public void ActualizarVidaMax() { 
+        vidaMax = GetComponent<PersonajeController>().VidaTotal();
+        vida = GetComponent<PersonajeController>().Vida();
+    }
+
     public void Componentes(TextMeshProUGUI vidaNumero, Image bVida)
     {
         this.vidaNumero = vidaNumero;
