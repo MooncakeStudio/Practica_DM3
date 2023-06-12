@@ -27,4 +27,12 @@ public class MostrarPuntuaciones : MonoBehaviour
             }
         }
     }
+
+    public void CerrarPuntuaciones()
+    {
+        var texto = mostrarPuntuaciones.transform.Find("Modal/ListaHS/Container/Texto").GetComponent<TextMeshProUGUI>();
+        texto.text = "";
+        mostrarPuntuaciones.SetActive(false);
+        
+    }
 }

@@ -2158,8 +2158,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.006591797, y: -159.35944}
-  m_SizeDelta: {x: -2039.3, y: -899.8412}
+  m_AnchoredPosition: {x: -0.010986328, y: -109.01001}
+  m_SizeDelta: {x: -2039.3, y: -799.13}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &786414045
 MonoBehaviour:
@@ -3476,7 +3476,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0013828, y: -263.97134}
+  m_AnchoredPosition: {x: -0.0013828, y: -314.3184}
   m_SizeDelta: {x: 921.02, y: 1181.3983}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1286891108
@@ -3735,10 +3735,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 689989127}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1674515626}
+        m_TargetAssemblyTypeName: MostrarPuntuaciones, Assembly-CSharp
+        m_MethodName: CerrarPuntuaciones
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4093,9 +4093,9 @@ MonoBehaviour:
   m_Interactable: 1
   m_TargetGraphic: {fileID: 1793674311}
   m_HandleRect: {fileID: 1793674310}
-  m_Direction: 3
-  m_Value: 1.0000018
-  m_Size: 0.5531255
+  m_Direction: 2
+  m_Value: 1
+  m_Size: 0.46789116
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -4583,8 +4583,8 @@ RectTransform:
   m_Father: {fileID: 805983451}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 0.5531255}
+  m_AnchorMin: {x: 0, y: 0.53210884}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
