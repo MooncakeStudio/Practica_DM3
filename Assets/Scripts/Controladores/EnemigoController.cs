@@ -16,7 +16,7 @@ public class EnemigoController : MonoBehaviour
 
     private void Start()
     {
-        personaje = new Guerrero();
+        personaje = new Guerrero("",10,0,0);
         rb = GetComponent<Rigidbody>();
         objetivo = FindObjectOfType<PersonajeController>();
         var posicionPersonaje = objetivo.gameObject.transform.position;

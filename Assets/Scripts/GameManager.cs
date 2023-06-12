@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
 
         tiempo = 0;
         ronda = 1;
-        enemigosGenerar = 5;
+        enemigosGenerar = 6;
 
         asrc.volume = 1;
     }
@@ -70,7 +70,21 @@ public class GameManager : MonoBehaviour
 
     
 
-    public void PasarRonda() { ronda++; enemigosGenerar = enemigosGenerar + (int)Random.Range(1, 4); enemigosDerrotados = 0; enemigosGenerados = 0; }
+    public void PasarRonda() 
+    { 
+        ronda++; 
+        //enemigosGenerar = enemigosGenerar + (int)Random.Range(1, 4);
+        
+        for(int i = 1; i < 4; i++)
+        {
+            var nuevosEnemigos = (int)Random.Range(0,2);
+            var spawners = GameObject.Find("SP" + i);
+            spawners.GetComponent<SpawnerManager>().AumentarEnemigosGenerar(nuevosEnemigos);
+            enemigosGenerar += nuevosEnemigos;
+        }
+        enemigosDerrotados = 0; 
+        enemigosGenerados = 0; 
+    }
     public void NuevoEnemgio() { enemigosGenerados++; }
     public void EnemigoDerrotado() { enemigosDerrotados++; enemigosTotales++; }
     public int GetEnemigosGenerados() { return enemigosGenerados; }
@@ -92,7 +106,7 @@ public class GameManager : MonoBehaviour
         DataHandler.instance.Guardar();
         ronda = 1;
         tiempo = 0;
-        enemigosGenerar = 5;
+        enemigosGenerar = 6;
         enemigosTotales = 0;
         enemigosGenerados = 0;
         SceneManager.LoadScene("MenuPPal_Actualizado");
