@@ -29,7 +29,7 @@ public class PersonajeController : MonoBehaviour
 
     public void TakeDamage(int d)
     {
-        Debug.Log("Personaje recibe da�o");
+        Debug.Log("Personaje recibe da�o" + d);
         personaje.herida(d);
         GetComponent<VidaController>().actualizarVida(personaje.GetVida());
         if (personaje.GetVida() <= 0 && !delegateInvoke)

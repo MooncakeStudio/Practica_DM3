@@ -36,6 +36,7 @@ public class Personaje
     public int GetVidaMax() { return this.vidaMax; }
     public int GetAtaque() { return this.ataque; }
     public int GetDefensa() { return this.defensa; }
+    public void SetAtaque(int at){ this.ataque=at;}
 
     public void herida(int d) 
     { 
